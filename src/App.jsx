@@ -1,49 +1,37 @@
-// import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
-// import Layout from "./components/Layout";
-// import Home from "./pages/Home";
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
+import HeroSection from "./components/HeroSection.jsx";
+import Expertise from "./components/Expertise.jsx";
+import Beamline from "./components/Beamline.jsx";
+import Publications from "./components/Publications.jsx";
+import Talks from "./components/Talks.jsx";
+import Gallery from "./components/Gallery.jsx";
 
-// function App() {
-//   return (
-//     <BrowserRouter>
-//       <Layout>
-//         <Routes>
-//           <Route path="/" element={<Home />} />
-//         </Routes>
-//       </Layout>
-//     </BrowserRouter>
-//   );
-// }
-
-// export default App;
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout";
-import Home from "./pages/Home";
-
-// Create simple placeholder components for the other routes for now
-const Publications = () => (
-  <div className="text-3xl font-heading">Publications Content Here</div>
-);
-const Research = () => (
-  <div className="text-3xl font-heading">Research Focus Content Here</div>
-);
-const Team = () => (
-  <div className="text-3xl font-heading">Our Team Content Here</div>
-);
-
-function App() {
+export default function Portfolio() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/research" element={<Research />} />
-          <Route path="/publications" element={<Publications />} />
-          <Route path="/team" element={<Team />} />
-          {/* Add the rest of your routes here based on the detailed input list */}
-        </Routes>
-      </Layout>
-    </Router>
+    <>
+      {/* EDITORIAL NAVIGATION */}
+      <Header />
+
+      <main>
+        {/* HERO SECTION */}
+        <HeroSection />
+
+        {/* EXPERTISE SECTION */}
+        <Expertise />
+        {/* BEAMLINE ACCESS */}
+        <Beamline />
+
+        {/* PULICATIONS */}
+        <Publications />
+        {/* TALKS & AWARDS (SPLIT) */}
+        <Talks />
+
+        {/* GALLERY */}
+        <Gallery />
+      </main>
+
+      <Footer />
+    </>
   );
 }
-
-export default App;
