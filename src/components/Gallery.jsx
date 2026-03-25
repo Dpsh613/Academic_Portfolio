@@ -27,10 +27,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section
-      id="gallery"
-      className="py-24 px-8 md:px-16 bg-neutral-950 relative"
-    >
+    <section id="gallery" className="py-24 px-8 md:px-16 bg-black relative">
       <motion.div
         initial="hidden"
         whileInView="visible"

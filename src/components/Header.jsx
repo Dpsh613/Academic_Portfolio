@@ -3,11 +3,11 @@ import { useEffect, useState, useRef } from "react";
 const sections = [
   "home",
   "research",
-  "beamline",
   "publications",
-  "collaborators",
+  "beamline",
   "talks",
   "awards",
+  "collaborators",
   "gallery",
 ];
 

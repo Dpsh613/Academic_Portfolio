@@ -6,11 +6,8 @@ const Talks = () => {
   return (
     <section
       id="talks"
-      className="relative w-full py-24 px-8 md:px-16 bg-[url('./assets/images/img3.jpg')] bg-cover bg-center bg-no-repeat"
+      className="relative w-full py-24 px-8 md:px-16 bg-black"
     >
-      {/* 3. The dark overlay. It is absolute so it doesn't affect the document flow */}
-      <div className="absolute inset-0 bg-black/85 z-0 pointer-events-none"></div>
-
       {/* 4. Content wrapper. 'relative z-10' keeps this ABOVE the dark overlay, 
              and pushes the section height down normally, preventing overlaps. */}
       <div className="relative z-10">

@@ -4,7 +4,7 @@ import staggerContainer from "../animation/staggerContainer";
 
 const Awards = () => {
   return (
-    <section id="awards" className="py-24 px-8 md:px-16 bg-black">
+    <section id="awards" className="py-24 px-8 md:px-16 bg-neutral-950">
       <motion.div
         initial="hidden"
         whileInView="visible"
