@@ -9,32 +9,35 @@ const Publications = () => {
 
   const pubData = [
     {
-      tag: "Nature Physics • 2023",
-      title: "Quantum Tunnelling in Bi-stable Ground States",
+      tag: " Journal of Alloys and Compounds •  2025",
+      title:
+        "Exploring the disordered magnetic ground state and spin dynamics in the honeycomb oxide Na3Cu2SbO6,",
       desc: "Experimental evidence utilizing ND and INS techniques to observe spin-relaxation paradigms in novel lattice structures. This study provides a new framework for understanding quantum fluctuations in frustrated magnets.",
       imgLabel: "Excitation Spectrum Analysis",
     },
     {
-      tag: "Physical Review Letters • 2018",
-      title: "Magnetoelectric Properties & Spin-Dipole Coupling",
+      tag: "Journal of Alloys and Compounds • 2025",
+      title:
+        "Successive antiferromagnetic and ferro-magnetic phase transitions in PrRu2Al2B: A comprehensive study of magnetic transitions",
       desc: "Pioneering design routes to achieve ME coupling in multifunctional materials under extreme magnetic fields. We report a record-high coupling constant in rare-earth oxides.",
       imgLabel: "Magnetic Phase Diagram",
     },
     {
-      tag: "Advanced Materials • 2021",
-      title: "Synthetic Antiferromagnets in Thin Films",
+      tag: "Journal of Alloys and Compounds • 2024",
+      title:
+        "Exploring superconductivity in Ba3Ir4Ge16:Experimental and theoretical insights",
       desc: "Exploring the thermal stability of synthetic AFMs for next-generation MRAM applications. Our results demonstrate enhanced stability up to 400K.",
       imgLabel: "Crystal Lattice Render",
     },
   ];
 
   // Auto-slide logic
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 5000); // Changes every 5 seconds
-    return () => clearInterval(timer);
-  }, [currentIndex]);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     nextSlide();
+  //   }, 5000); // Changes every 5 seconds
+  //   return () => clearInterval(timer);
+  // }, [currentIndex]);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev === pubData.length - 1 ? 0 : prev + 1));
@@ -85,10 +88,11 @@ const Publications = () => {
 
               <div>
                 <a
-                  href="#"
+                  href="https://www.sciencedirect.com/science/article/abs/pii/S0925838825026416?via%3Dihub"
                   className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-white hover:text-yellow-400 transition-colors group/link"
                 >
-                  Read Full Paper
+                  {/* i need 3 links and not one link */}
+                  Read More
                   <ExternalLink
                     size={14}
                     className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform"

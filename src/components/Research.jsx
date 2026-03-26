@@ -32,18 +32,18 @@ const Research = () => {
           {[
             {
               num: "01",
-              title: "Novel Synthesis",
-              desc: "Experience in floating zone and flux growth of high-quality single crystals, forming the basis for advanced material analysis.",
+              title: "Core Physics",
+              desc: "Experimental investigation of strongly correlated electron systems, focusing on quantum magnetism, spin dynamics, and complex magnetic ground states in low-dimensional materials exhibiting geometric and bond-dependent magnetic frustration.",
             },
             {
               num: "02",
-              title: "Spectroscopy",
-              desc: "Expertise in utilizing high-level probes such as inelastic neutron scattering and muon-spin spectroscopy (μSR).",
+              title: "Structural Property",
+              desc: " Investigating the fundamental physics driven by the competition among electron correlation, spin-orbit coupling, and crystal field effects to elucidate the electronic states and origin of local magnetic moments in novel transition metal compounds",
             },
             {
               num: "03",
-              title: "Data Science",
-              desc: "Advanced Python-based modeling of magnetic structures, excitation spectra, and diffuse scattering analysis.",
+              title: "Methodological Approach",
+              desc: "Correlating macroscopic thermodynamic and transport measurements with microscopic magnetic and structural states. This relies on a comprehensive workflow-spanning solid-state material synthesis, spectroscopic determination of electronic structure (XAFS, XPS), and advanced large-scale facility probes (neutron scattering, muon spin relaxation, and synchrotron X-rays).",
             },
           ].map((item) => (
             <motion.div
