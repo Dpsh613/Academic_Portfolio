@@ -85,7 +85,7 @@ const Publications = () => {
   };
 
   return (
-    <section id="publications" className="py-24 px-8 md:px-16 bg-neutral-950">
+    <section id="publications" className="py-24 px-8 md:px-16 bg-black">
       <motion.div
         initial="hidden"
         whileInView="visible"

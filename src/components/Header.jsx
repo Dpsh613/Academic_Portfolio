@@ -1,81 +1,52 @@
 import { useEffect, useState, useRef } from "react";
+import { useLocation, Link } from "react-router-dom";
 
-const sections = [
-  "home",
-  "research",
-  "publications",
-  "beamline",
-  "talks",
-  "awards",
-  "collaborators",
-  "gallery",
+// 1. Define strictly PAGE routes
+const pageLinks = [
+  { name: "Home", path: "/" },
+  { name: "Research", path: "/research" },
+  { name: "Publications", path: "/publications" },
+  { name: "Beamlines", path: "/beamline" },
+  { name: "Collaborators", path: "/collaborators" },
 ];
 
 const Header = () => {
-  const [active, setActive] = useState("home");
+  const location = useLocation(); // Gets current URL path
   const [lineStyle, setLineStyle] = useState({ width: 0, left: 0 });
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false); // Added state for scrolling
+  const [isScrolled, setIsScrolled] = useState(false);
   const navItemsRef = useRef({});
 
-  // Detect Scroll for Glassmorphism
+  // Detect Scroll for Glassmorphism Background
   useEffect(() => {
-    const handleScroll = () => {
-      // Activates glass effect after scrolling down 50px
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle Animated Yellow Line Under Active Link
   useEffect(() => {
-    // 1. Create a SINGLE observer for all sections
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // 2. If the section crosses our trigger line, set it as active
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      {
-        rootMargin: "-20% 0px -79% 0px",
-        threshold: 0,
-      },
-    );
+    const updateLinePosition = () => {
+      const activeMenuElement = navItemsRef.current[location.pathname];
 
-    // 4. Observe all sections with the single observer
-    sections.forEach((id) => {
-      const section = document.getElementById(id);
-      if (section) {
-        observer.observe(section);
+      if (activeMenuElement && window.innerWidth >= 1280) {
+        const { offsetLeft, offsetWidth } = activeMenuElement;
+        setLineStyle({ left: offsetLeft, width: offsetWidth });
+      } else {
+        setLineStyle({ width: 0, left: 0 }); // Hide if on an unlisted page
       }
-    });
+    };
 
-    // 5. Clean up
-    return () => observer.disconnect();
-  }, []);
+    updateLinePosition();
 
-  useEffect(() => {
-    const activeMenuElement = navItemsRef.current[active];
-    if (activeMenuElement && window.innerWidth >= 1280) {
-      const { offsetLeft, offsetWidth } = activeMenuElement;
-      setLineStyle({
-        left: offsetLeft,
-        width: offsetWidth,
-      });
-    }
-  }, [active, isMobileOpen]);
+    // Optional: Update line if user resizes their window
+    window.addEventListener("resize", updateLinePosition);
+    return () => window.removeEventListener("resize", updateLinePosition);
+  }, [location.pathname, isMobileOpen]);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+    document.body.style.overflow = isMobileOpen ? "hidden" : "unset";
   }, [isMobileOpen]);
 
   return (
@@ -87,10 +58,13 @@ const Header = () => {
       }`}
     >
       <div className="flex justify-between items-center max-w-7xl mx-auto w-full">
-        {/* Logo */}
-        <div className="font-heading font-bold text-xl tracking-[0.15em] text-white relative z-[60]">
+        {/* Logo - Clickable to return Home */}
+        <Link
+          to="/"
+          className="font-heading font-bold text-xl tracking-[0.15em] text-white relative z-[60]"
+        >
           A. K. <span className="text-yellow-400">JANA</span>.
-        </div>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden xl:flex gap-10 relative">
@@ -102,19 +76,19 @@ const Header = () => {
             }}
           />
 
-          {sections.map((item) => (
-            <a
-              key={item}
-              href={`#${item}`}
-              ref={(el) => (navItemsRef.current[item] = el)}
-              className={`text-xs text-white font-medium uppercase tracking-widest transition-all duration-300 ${
-                active === item
+          {pageLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              ref={(el) => (navItemsRef.current[link.path] = el)}
+              className={`text-xs font-medium uppercase tracking-widest transition-all duration-300 ${
+                location.pathname === link.path
                   ? "text-yellow-400"
                   : "text-neutral-400 hover:text-yellow-400"
               }`}
             >
-              {item}
-            </a>
+              {link.name}
+            </Link>
           ))}
         </nav>
 
@@ -125,20 +99,14 @@ const Header = () => {
           aria-label="Toggle Menu"
         >
           <div
-            className={`w-6 h-0.5 bg-white transition-all duration-300 ${
-              isMobileOpen ? "rotate-45 translate-y-2" : ""
-            }`}
-          ></div>
+            className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileOpen ? "rotate-45 translate-y-2" : ""}`}
+          />
           <div
-            className={`w-6 h-0.5 bg-white transition-all duration-300 ${
-              isMobileOpen ? "opacity-0" : "opacity-100"
-            }`}
-          ></div>
+            className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileOpen ? "opacity-0" : "opacity-100"}`}
+          />
           <div
-            className={`w-6 h-0.5 bg-white transition-all duration-300 ${
-              isMobileOpen ? "-rotate-45 -translate-y-2" : ""
-            }`}
-          ></div>
+            className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileOpen ? "-rotate-45 -translate-y-2" : ""}`}
+          />
         </button>
       </div>
 
@@ -158,19 +126,19 @@ const Header = () => {
           isMobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {sections.map((item) => (
-          <a
-            key={item}
-            href={`#${item}`}
+        {pageLinks.map((link) => (
+          <Link
+            key={link.name}
+            to={link.path}
             onClick={() => setIsMobileOpen(false)}
             className={`text-sm sm:text-base font-medium uppercase tracking-widest transition-all duration-300 ${
-              active === item
+              location.pathname === link.path
                 ? "text-yellow-400 translate-x-2"
                 : "text-neutral-400 hover:text-white"
             }`}
           >
-            {item}
-          </a>
+            {link.name}
+          </Link>
         ))}
       </div>
     </header>

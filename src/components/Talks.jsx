@@ -72,7 +72,7 @@ const Talks = () => {
   return (
     <section
       id="talks"
-      className="relative w-full py-24 px-8 md:px-16 bg-neutral-950"
+      className="relative w-full py-24 px-8 md:px-16 bg-black"
     >
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Section Header */}

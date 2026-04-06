@@ -10,7 +10,7 @@ const HeroSection = () => {
       className="relative min-h-screen bg-[url('./assets/images/img1.jpg')] bg-cover bg-center"
     >
       {/* Dark Overlay & Centering Container */}
-      <div className="absolute inset-0 bg-black/80">
+      <div className="absolute inset-0 bg-black/80 selection:bg-yellow-400/30">
         <div className="container mx-auto px-8 md:px-16 h-full flex items-center">
           {/* Responsive Grid: 1 Col on Mobile, 2 Cols on Desktop */}
           <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-12 w-full mt-20 pt-20">
@@ -20,7 +20,7 @@ const HeroSection = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={staggerContainer}
-              className="flex flex-col justify-center gap-2 md:gap-"
+              className="flex flex-col justify-center gap-2 md:gap-5"
             >
               {/* NAME */}
               <motion.h1
@@ -28,7 +28,9 @@ const HeroSection = () => {
                 className="font-heading text-[clamp(3rem,6vw,5.5rem)] font-light leading-tight tracking-tight text-white"
               >
                 Arnab Kanti{" "}
-                <span className="font-bold text-yellow-400">Jana</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-b from-yellow-400 to-yellow-600">
+                  Jana
+                </span>
               </motion.h1>
 
               {/* POSITION */}
