@@ -111,11 +111,11 @@ export const beamlineData = [
     desc: "The largest research institute for natural and engineering sciences in Switzerland, operating world-class research infrastructures including the Swiss Muon Source (SμS).",
     instruments: [
       {
-        name: "PETRA III",
+        name: "PETRA III - P24",
         instImg:
           "https://res.cloudinary.com/dsbslj3nb/image/upload/q_auto/f_auto/v1774971080/DESY_Petra-III_P24_2_bmsa0j.jpg",
         link: "https://photon-science.desy.de/facilities/petra_iii/beamlines/p24_chemical_crystallography/index_eng.html",
-        desc: "General Purpose Decay-Channel Muon Spectrometer.",
+        desc: "P24 Chemical Crystallography.",
         proposals: [
           {
             id: "20220829",

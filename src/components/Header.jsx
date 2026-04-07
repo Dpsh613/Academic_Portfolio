@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useLocation, Link } from "react-router-dom";
 
-// 1. Define strictly PAGE routes
 const pageLinks = [
   { name: "Home", path: "/" },
   { name: "Research", path: "/research" },
@@ -11,20 +10,18 @@ const pageLinks = [
 ];
 
 const Header = () => {
-  const location = useLocation(); // Gets current URL path
+  const location = useLocation();
   const [lineStyle, setLineStyle] = useState({ width: 0, left: 0 });
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const navItemsRef = useRef({});
 
-  // Detect Scroll for Glassmorphism Background
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle Animated Yellow Line Under Active Link
   useEffect(() => {
     const updateLinePosition = () => {
       const activeMenuElement = navItemsRef.current[location.pathname];
@@ -33,18 +30,16 @@ const Header = () => {
         const { offsetLeft, offsetWidth } = activeMenuElement;
         setLineStyle({ left: offsetLeft, width: offsetWidth });
       } else {
-        setLineStyle({ width: 0, left: 0 }); // Hide if on an unlisted page
+        setLineStyle({ width: 0, left: 0 });
       }
     };
 
     updateLinePosition();
 
-    // Optional: Update line if user resizes their window
     window.addEventListener("resize", updateLinePosition);
     return () => window.removeEventListener("resize", updateLinePosition);
   }, [location.pathname, isMobileOpen]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = isMobileOpen ? "hidden" : "unset";
   }, [isMobileOpen]);
@@ -58,15 +53,12 @@ const Header = () => {
       }`}
     >
       <div className="flex justify-between items-center max-w-7xl mx-auto w-full">
-        {/* Logo - Clickable to return Home */}
         <Link
           to="/"
           className="font-heading font-bold text-xl tracking-[0.15em] text-white relative z-[60]"
         >
           A. K. <span className="text-yellow-400">JANA</span>.
         </Link>
-
-        {/* Desktop Navigation */}
         <nav className="hidden xl:flex gap-10 relative">
           <div
             className="absolute bottom-[-8px] h-[2px] bg-yellow-400 transition-all duration-500 ease-in-out"
@@ -92,7 +84,6 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Mobile Hamburger Button */}
         <button
           className="xl:hidden flex flex-col gap-1.5 relative z-[60] p-2 focus:outline-none"
           onClick={() => setIsMobileOpen(!isMobileOpen)}
@@ -110,7 +101,6 @@ const Header = () => {
         </button>
       </div>
 
-      {/* Background Overlay for Mobile Menu */}
       <div
         className={`fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 xl:hidden z-40 ${
           isMobileOpen
@@ -120,7 +110,6 @@ const Header = () => {
         onClick={() => setIsMobileOpen(false)}
       />
 
-      {/* Mobile Right-Side Sidebar/Drawer */}
       <div
         className={`fixed top-0 right-0 h-[100dvh] w-64 sm:w-80 bg-black/80 border-l border-black/80 shadow-2xl flex flex-col justify-start pt-32 px-10 gap-8 transition-transform duration-500 ease-in-out xl:hidden z-50 overflow-y-auto ${
           isMobileOpen ? "translate-x-0" : "translate-x-full"

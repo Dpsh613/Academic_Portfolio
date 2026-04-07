@@ -1,7 +1,7 @@
-import React from "react";
 import { motion } from "framer-motion";
 import fadeUpVariant from "../animation/fadeUpVariant";
 import staggerContainer from "../animation/staggerContainer";
+import pageTransition from "../animation/pageTransition";
 import { beamlineData } from "../constants/beamlineData";
 import {
   ArrowUpRight,
@@ -37,15 +37,16 @@ const heroGridImages = [
 
 const BeamlinePage = () => {
   return (
-    // Unified Dark Theme Background
-    <section className="bg-zinc-950 min-h-screen text-zinc-300 selection:bg-yellow-400/30 selection:text-yellow-400">
-      {/* ================= HERO SECTION ================= */}
+    <motion.section
+      variants={pageTransition}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      className="bg-zinc-950 min-h-screen text-zinc-300 selection:bg-yellow-400/30 selection:text-yellow-400"
+    >
       <div className="relative min-h-screen w-full flex items-center bg-[url('./assets/images/img5.jpg')] bg-cover bg-center border-b border-zinc-900 overflow-hidden">
-        {/* Deep, sophisticated radial gradient background */}
         <div className="absolute inset-0 bg-black/80 "></div>
-
         <div className="w-full max-w-7xl mx-auto  pt-32 pb-20 px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10">
-          {/* LEFT CONTENT */}
           <div className="lg:col-span-5 space-y-8">
             <motion.div
               initial="hidden"
@@ -105,7 +106,6 @@ const BeamlinePage = () => {
         </div>
       </div>
 
-      {/* ================= MAIN CONTENT (Sticky Layout) ================= */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-32 space-y-32 md:space-y-48">
         {beamlineData.map((facility, fIdx) => (
           <motion.div
@@ -116,10 +116,8 @@ const BeamlinePage = () => {
             variants={fadeUpVariant}
             className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20"
           >
-            {/* --- LEFT COLUMN: Sticky Facility Info --- */}
             <div className="lg:col-span-4 relative">
               <div className="sticky top-32 space-y-8">
-                {/* Facility Logo & Header Image */}
                 <div className="relative h-48 rounded-2xl overflow-hidden border border-zinc-800/50 group">
                   <img
                     src={facility.bgImg}
@@ -139,7 +137,6 @@ const BeamlinePage = () => {
                   )}
                 </div>
 
-                {/* Facility Details */}
                 <div>
                   <h2 className="text-3xl font-bold text-white mb-3 leading-tight">
                     {facility.facility}
@@ -167,7 +164,6 @@ const BeamlinePage = () => {
               </div>
             </div>
 
-            {/* --- RIGHT COLUMN: Instruments & Proposals Feed --- */}
             <div className="lg:col-span-8 space-y-12">
               <div className="flex items-center gap-4 border-b border-zinc-800 pb-4">
                 <Microscope className="w-6 h-6 text-yellow-400" />
@@ -179,7 +175,6 @@ const BeamlinePage = () => {
               <div className="space-y-16">
                 {facility.instruments.map((inst, iIdx) => (
                   <div key={iIdx} className="space-y-6">
-                    {/* Instrument Header */}
                     <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                       <div>
                         <h4 className="text-2xl font-bold text-white mb-2">
@@ -201,7 +196,6 @@ const BeamlinePage = () => {
                       )}
                     </div>
 
-                    {/* Instrument Image Banner */}
                     <div className="w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden border border-zinc-800/50 relative">
                       <img
                         src={inst.instImg}
@@ -211,19 +205,17 @@ const BeamlinePage = () => {
                       <div className="absolute top-4 left-4 bg-zinc-950/80 backdrop-blur px-3 py-1.5 rounded-md border border-zinc-800 flex items-center gap-2">
                         <FileText className="w-3 h-3 text-yellow-400" />
                         <span className="text-xs font-bold text-zinc-300 uppercase tracking-wider">
-                          {inst.proposals.length} Awarded Proposals
+                          Proposals - {inst.proposals.length}
                         </span>
                       </div>
                     </div>
 
-                    {/* Proposals List (Data-Table Style) */}
                     <div className="grid grid-cols-1 gap-3 pt-2">
                       {inst.proposals.map((prop, pIdx) => (
                         <div
                           key={pIdx}
                           className="group bg-zinc-900/30 hover:bg-zinc-900/80 border border-zinc-800/50 hover:border-yellow-400/30 rounded-lg p-5 transition-all duration-300 flex flex-col md:flex-row md:items-center gap-4 md:gap-8"
                         >
-                          {/* Left: Meta Data */}
                           <div className="shrink-0 md:w-32 flex flex-col gap-2">
                             <span className="font-mono text-xs text-zinc-500 uppercase tracking-widest">
                               ID: {prop.id}
@@ -233,7 +225,6 @@ const BeamlinePage = () => {
                             </span>
                           </div>
 
-                          {/* Right: Description */}
                           <p className="text-sm text-zinc-300 font-light leading-relaxed">
                             {prop.desc}
                           </p>
@@ -247,7 +238,7 @@ const BeamlinePage = () => {
           </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
