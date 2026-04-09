@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
-import { MdOutlineArrowRightAlt } from "react-icons/md";
-import fadeUpVariant from "../animation/fadeUpVariant";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import fadeUpVariant from "../../animation/fadeUpVariant";
+import { SecondaryBorder } from "../ui/Button";
+import { MonoLink } from "../ui/Button";
 
 const Publications = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -85,7 +86,7 @@ const Publications = () => {
   };
 
   return (
-    <section id="publications" className="py-24 px-8 md:px-16 bg-black">
+    <section id="publications" className="py-20 px-8 md:px-16 bg-theme">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -93,10 +94,8 @@ const Publications = () => {
         variants={fadeUpVariant}
         className="mb-16"
       >
-        <h3 className="font-heading text-4xl font-medium tracking-tight text-white">
-          Selected Publications
-        </h3>
-        <div className="w-16 h-0.5 bg-yellow-400 mt-6"></div>
+        <h2 className="text-theme-heading">Selected Publications</h2>
+        <div className="w-24 h-0.5 bg-theme-accent mt-6"></div>
       </motion.div>
 
       <div className="relative group max-w-6xl mx-auto mb-24">
@@ -111,30 +110,25 @@ const Publications = () => {
           >
             {/* Left Side: Content */}
             <div className="p-8 md:p-12 flex flex-col justify-center border-b md:border-b-0 md:border-r border-yellow-400">
-              <span className="block text-[12px] font-bold uppercase tracking-[0.3em] text-yellow-400 mb-6">
+              <span className="block text-[12px] font-bold uppercase tracking-[0.3em] bg-heading-gradient text-transparent bg-clip-text mb-6">
                 {pubData[currentIndex].tag}
               </span>
-              <h4 className="font-heading text-3xl font-medium text-white mb-6 leading-tight">
+              <h3 className="text-white mb-6 leading-tight">
                 {pubData[currentIndex].title}
-              </h4>
+              </h3>
               <p className="text-neutral-400 font-light leading-relaxed mb-10">
                 {pubData[currentIndex].desc}
               </p>
 
               <div>
                 {/* DYNAMIC LINK APPLIED HERE */}
-                <a
+                <MonoLink
                   href={pubData[currentIndex].link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-white hover:text-yellow-400 transition-colors group/link"
                 >
                   Read More
-                  <ExternalLink
-                    size={14}
-                    className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform"
-                  />
-                </a>
+                </MonoLink>
               </div>
             </div>
 
@@ -173,13 +167,9 @@ const Publications = () => {
         variants={fadeUpVariant}
         className="mt-[-10] mb-20 flex justify-center"
       >
-        <button className="px-8 py-4 border border-yellow-400 text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-yellow-400 hover:text-black transition-all duration-300 flex items-center gap-4">
-          View All Publications
-          <MdOutlineArrowRightAlt size={30} className="text-current" />
-        </button>
+        <SecondaryBorder to="/beamline">View All Publications</SecondaryBorder>
       </motion.div>
 
-      {/* --- NEW SECTION: HANDS-ON EXPERTISE --- */}
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -188,9 +178,9 @@ const Publications = () => {
         className="max-w-6xl mx-auto mb-16"
       >
         <div className="flex items-center gap-6 mb-12">
-          <h3 className="font-heading text-4xl font-medium font-light tracking-wide text-white">
+          <h2 className="font-heading text-fluid-2 font-light tracking-tight text-white">
             Hands-on Expertise
-          </h3>
+          </h2>
           <div className="flex-grow h-px bg-neutral-500"></div>
         </div>
 
@@ -204,7 +194,7 @@ const Publications = () => {
               {/* Subtle yellow highlight bar on hover */}
               <div className="absolute top-0 left-0 w-0 h-1 bg-yellow-400 transition-all duration-300 group-hover:w-full"></div>
 
-              <h4 className="text-[12px] font-bold uppercase tracking-[0.1em] text-yellow-400 mb-4">
+              <h4 className="tracking-[0.1em]  bg-heading-gradient text-transparent bg-clip-text font-light mb-4">
                 {item.category}
               </h4>
               <p className="text-sm text-neutral-300 font-light leading-relaxed">

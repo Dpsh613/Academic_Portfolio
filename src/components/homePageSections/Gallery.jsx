@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import fadeUpVariant from "../animation/fadeUpVariant";
-import staggerContainer from "../animation/staggerContainer";
+import fadeUpVariant from "../../animation/fadeUpVariant";
+import staggerContainer from "../../animation/staggerContainer";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -13,8 +13,6 @@ const Gallery = () => {
     } else {
       document.body.style.overflow = "auto";
     }
-
-    // Cleanup on unmount
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -35,12 +33,10 @@ const Gallery = () => {
         variants={fadeUpVariant}
         className="mb-16"
       >
-        <h3 className="font-heading text-4xl font-medium tracking-tight text-white mb-4">
-          Beyond the Lab
-        </h3>
-        <p className="text-neutral-400 text-lg font-light">
+        <h2 className="text-white mb-4">Beyond the Lab</h2>
+        <h3 className="bg-heading-gradient text-transparent bg-clip-text">
           Moments of clarity outside the laboratory.
-        </p>
+        </h3>
       </motion.div>
 
       <motion.div

@@ -1,6 +1,7 @@
 export const beamlineData = [
   {
     facility: "ISIS Neutron and Muon Source (STFC)",
+    acronym: "STFC",
     location: "United Kingdom",
     logo: "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971244/ISIS_logo_v7wwas.png",
     bgImg:
@@ -54,6 +55,7 @@ export const beamlineData = [
   },
   {
     facility: "Paul Scherrer Institute (PSI)",
+    acronym: "PSI",
     location: "Switzerland",
     logo: "https://res.cloudinary.com/dsbslj3nb/image/upload/q_auto/f_auto/v1775462609/images_onjjkb.png",
     bgImg:
@@ -103,6 +105,7 @@ export const beamlineData = [
   },
   {
     facility: "Deutsches Elektronen-Synchrotron (DESY)",
+    acronym: "DESY",
     location: "Germany",
     logo: "https://res.cloudinary.com/dsbslj3nb/image/upload/q_auto/f_auto/v1774970012/DESY_logo_smiisc.png",
     bgImg:
@@ -133,6 +136,7 @@ export const beamlineData = [
   },
   {
     facility: "Japan Proton Accelerator Research Complex",
+    acronym: "JPARC",
     location: "Japan",
     logo: "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971448/JPARC_logo_nmbtqj.png",
     bgImg:
@@ -158,6 +162,7 @@ export const beamlineData = [
   },
   {
     facility: "Raja Ramanna Centre for Advanced Technology",
+    acronym: "RRCAT",
     location: "India",
     logo: "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971957/RRCAT_logo_lipbmg.png",
     bgImg:

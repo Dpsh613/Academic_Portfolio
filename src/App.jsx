@@ -2,8 +2,9 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 // components
-import Header from "./components/Header.jsx";
-import Footer from "./components/Footer.jsx";
+import Header from "./components/Layout/Header.jsx";
+import ScrollToTop from "./components/Layout/ScrollToTop.jsx";
+import Footer from "./components/Layout/Footer.jsx";
 
 // pages
 import Home from "./pages/Home.jsx";
@@ -34,6 +35,7 @@ const AnimatedRoutes = () => {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
       <main>
         <AnimatedRoutes />

@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {

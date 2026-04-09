@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import fadeUpVariant from "../../animation/fadeUpVariant";
+import staggerContainer from "../../animation/staggerContainer";
 import { useEffect, useState, useRef } from "react";
 import { useLocation, Link } from "react-router-dom";
 
@@ -45,19 +48,30 @@ const Header = () => {
   }, [isMobileOpen]);
 
   return (
-    <header
+    <motion.header
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={staggerContainer}
       className={`fixed top-0 w-full px-8 md:px-16 z-50 transition-all duration-300 ${
         isScrolled
           ? "py-4 bg-black/90 backdrop-blur-md border-b border-white/10 shadow-lg"
           : "py-6 bg-transparent border-b border-transparent"
       }`}
     >
-      <div className="flex justify-between items-center max-w-7xl mx-auto w-full">
+      <motion.div
+        variants={fadeUpVariant}
+        className="flex justify-between items-center max-w-7xl mx-auto w-full"
+      >
         <Link
           to="/"
-          className="font-heading font-bold text-xl tracking-[0.15em] text-white relative z-[60]"
+          className="font-heading font-bold text-fluid-p tracking-[0.15em] text-theme-heading relative z-[60]"
         >
-          A. K. <span className="text-yellow-400">JANA</span>.
+          A. K.{" "}
+          <span className="bg-heading-gradient text-transparent bg-clip-text">
+            JANA
+          </span>
+          .
         </Link>
         <nav className="hidden xl:flex gap-10 relative">
           <div
@@ -73,11 +87,12 @@ const Header = () => {
               key={link.name}
               to={link.path}
               ref={(el) => (navItemsRef.current[link.path] = el)}
-              className={`text-xs font-medium uppercase tracking-widest transition-all duration-300 ${
-                location.pathname === link.path
-                  ? "text-yellow-400"
-                  : "text-neutral-400 hover:text-yellow-400"
-              }`}
+              className={`text-fluid-p font-mono uppercase tracking-widest transition-all duration-300 
+    ${
+      location.pathname === link.path
+        ? "bg-heading-gradient bg-clip-text text-transparent" // Active: Show gradient
+        : "text-theme-text hover:bg-heading-gradient-hover hover:bg-clip-text hover:text-transparent" // Inactive: Show solid color, gradient ONLY on hover
+    }`}
             >
               {link.name}
             </Link>
@@ -99,7 +114,7 @@ const Header = () => {
             className={`w-6 h-0.5 bg-white transition-all duration-300 ${isMobileOpen ? "-rotate-45 -translate-y-2" : ""}`}
           />
         </button>
-      </div>
+      </motion.div>
 
       <div
         className={`fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 xl:hidden z-40 ${
@@ -130,7 +145,7 @@ const Header = () => {
           </Link>
         ))}
       </div>
-    </header>
+    </motion.header>
   );
 };
 

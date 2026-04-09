@@ -1,32 +1,123 @@
 @import "tailwindcss";
 
-/* 
-  Tailwind v4 Theme Configuration 
-  Defining custom fonts if needed, though we can just use arbitrary values.
-*/
 @theme {
-  --font-heading: "Lora", serif;
-  --font-body:  "Inter", sans-serif;
+  /* Colors */
+  /* BLACK - main background color*/
+  --color-theme-black: #000;
+
+  /* WHITE */
+  --color-theme-heading: #ffffff;
+
+  /* CANT REMEMBER - BUT ZINC BORDERS AND MUTED TEXTS */
+  --color-theme-neutral-dark: #171717;
+  --color-theme-neutral-muted: #525252;
+  --color-theme-neutral-light: #a1a1a1;
+
+  /* NEED TO DELETE THIS BUT I AM USING SO REFACTOR  */
+  --color-theme-text: #cbbbbeff;
+
+  /* YELLOW - SECONDARY COLOR AND ITS DARK GRADIENT */
+  --background-image-text-secondary: linear-gradient(
+    to right,
+    var(--color-yellow-400),
+    var(--color-yellow-700)
+  );
+  --background-image-text-secondary-hover: linear-gradient(
+    to right,
+    var(--color-yellow-600),
+    var(--color-yellow-900)
+  );
+
+  /* yellow-500 for border/highlights */
+  --color-theme-accent: #f0b100;
+  --color-theme-accent-light: #fdc700;
+
+  /* ALL COLOR PROPERTIES FROM HERE IT NEEDS TO BE REPLACED */
+  --background-image-heading-gradient: linear-gradient(
+    to right,
+    var(--color-yellow-400),
+    var(--color-yellow-700)
+  );
+  --background-image-heading-gradient-hover: linear-gradient(
+    to right,
+    var(--color-yellow-600),
+    var(--color-yellow-900)
+  );
+  --color-theme-accent-hover: #fef08a;
+
+  /* Fonts */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+  /* for numbers */
+  --font-mono: "Space Mono", monospace;
+
+  /* Fluid Typography */
+  /* H1: Hero/Main Title */
+  --text-fluid-1: clamp(2.5rem, 5vw, 4.5rem);
+
+  /* H2: Section Headers */
+  --text-fluid-2: clamp(1.55rem, 3.8vw, 2.25rem);
+
+  /* H3: Sub-headers / Card Titles */
+  --text-fluid-3: clamp(1.25rem, 2.5vw, 1.75rem);
+
+  /* Body Text: High readability */
+  --text-fluid-4: clamp(1.15rem, 1.5vw, 1.25rem);
+  /* body font */
+  --text-fluid-p: clamp(1rem, 1.2vw, 1.125rem);
 }
 
 @layer base {
-  @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+  body {
+    @apply bg-theme-black text-theme-text font-body selection:bg-theme-accent/30 selection:text-theme-accent;
+    overflow-x: hidden;
+  }
+  h1 {
+    @apply font-heading text-fluid-1 font-light tracking-wider text-theme-heading;
+  }
 
+  h2 {
+    @apply font-heading text-fluid-2 font-light tracking-tight;
+  }
+
+  h3 {
+    @apply font-heading text-fluid-3 font-light;
+  }
+
+  h4 {
+    @apply font-heading text-fluid-4 font-bold uppercase;
+  }
+
+  p {
+    @apply font-body text-fluid-p text-left md:text-justify break-words leading-relaxed;
+  }
+  .bg-clip-text {
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  /* Smooth scrolling for anchor links */
   html {
     scroll-behavior: smooth;
   }
+}
 
-  body {
-    @apply bg-black text-neutral-100 antialiased overflow-x-hidden;
-    font-family: var(--font-body);
+@layer components {
+  .text-secondary {
+    @apply text-transparent bg-clip-text bg-text-secondary;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
+  .text-secondary-hover {
+    @apply bg-text-secondary-hover;
   }
 
-  /* High contrast selection - Bright Yellow over Black text */
-  ::selection {
-    @apply bg-yellow-400 text-black;
+  .gradient-border {
+    background: var(--background-image-text-secondary);
+    padding: 1px; /* border thickness */
+    border-radius: 0.125rem; /* match rounded-sm */
+  }
+
+  .gradient-border-inner {
+    @apply bg-theme-neutral-dark rounded-sm;
   }
 }

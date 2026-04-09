@@ -3,13 +3,8 @@ import fadeUpVariant from "../animation/fadeUpVariant";
 import staggerContainer from "../animation/staggerContainer";
 import pageTransition from "../animation/pageTransition";
 import { beamlineData } from "../constants/beamlineData";
-import {
-  ArrowUpRight,
-  MapPin,
-  Microscope,
-  Clock,
-  FileText,
-} from "lucide-react";
+import { MonoLink } from "../components/ui/Button";
+import { MapPin, Microscope, Clock, FileText } from "lucide-react";
 
 // Extract 5 images for the Hero Bento Grid
 const heroGridImages = [
@@ -58,24 +53,21 @@ const BeamlinePage = () => {
                 className="flex items-center gap-3 mb-6"
               >
                 <span className="w-8 h-px bg-yellow-400"></span>
-                <span className="text-yellow-400 uppercase tracking-[0.2em] text-xs font-bold">
+                <span className="bg-heading-gradient text-transparent bg-clip-text  uppercase tracking-[0.2em] text-xs font-bold">
                   Experimental Records
                 </span>
               </motion.div>
 
-              <motion.h1
-                variants={fadeUpVariant}
-                className="font-heading text-5xl md:text-7xl font-light leading-tight text-white tracking-tight"
-              >
+              <motion.h1 variants={fadeUpVariant}>
                 Beamline <br />
-                <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
+                <span className="font-bold bg-heading-gradient text-transparent bg-clip-text">
                   Access
                 </span>
               </motion.h1>
 
               <motion.p
                 variants={fadeUpVariant}
-                className="mt-8 text-base md:text-lg text-zinc-400 font-light leading-relaxed max-w-md"
+                className="mt-8 text-theme-text max-w-md"
               >
                 Beamtime awarded at leading neutron, muon and synchrotron
                 acilities for precision experiments across multiple instruments
@@ -138,7 +130,7 @@ const BeamlinePage = () => {
                 </div>
 
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-3 leading-tight">
+                  <h2 className="text-white mb-2 leading-tight">
                     {facility.facility}
                   </h2>
                   <div className="flex items-center gap-2 text-yellow-500 font-mono text-sm tracking-widest uppercase mb-6">
@@ -150,15 +142,13 @@ const BeamlinePage = () => {
                   </p>
 
                   {facility.link && (
-                    <a
+                    <MonoLink
                       href={facility.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-yellow-400 transition-colors group"
                     >
                       Visit Official Portal
-                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-yellow-400" />
-                    </a>
+                    </MonoLink>
                   )}
                 </div>
               </div>
@@ -177,22 +167,20 @@ const BeamlinePage = () => {
                   <div key={iIdx} className="space-y-6">
                     <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                       <div>
-                        <h4 className="text-2xl font-bold text-white mb-2">
-                          {inst.name}
-                        </h4>
+                        <h3 className="text-white mb-2">{inst.name}</h3>
                         <p className="text-zinc-400 text-sm leading-relaxed max-w-2xl">
                           {inst.desc}
                         </p>
                       </div>
                       {inst.link && (
-                        <a
+                        <MonoLink
                           href={inst.link}
                           target="_blank"
                           rel="noreferrer"
-                          className="shrink-0 text-xs font-mono uppercase tracking-widest text-yellow-400 hover:text-yellow-200 transition-colors flex items-center gap-1"
                         >
-                          View Specs <ArrowUpRight className="w-3 h-3" />
-                        </a>
+                          {" "}
+                          View Specs
+                        </MonoLink>
                       )}
                     </div>
 
