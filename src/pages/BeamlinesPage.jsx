@@ -37,7 +37,7 @@ const BeamlinePage = () => {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="bg-zinc-950 min-h-screen text-zinc-300 selection:bg-yellow-400/30 selection:text-yellow-400"
+      className="bg-red min-h-screen text-zinc-300 selection:bg-yellow-400/30 selection:text-yellow-400"
     >
       <div className="relative min-h-screen w-full flex items-center bg-[url('./assets/images/img5.jpg')] bg-cover bg-center border-b border-zinc-900 overflow-hidden">
         <div className="absolute inset-0 bg-black/80 "></div>

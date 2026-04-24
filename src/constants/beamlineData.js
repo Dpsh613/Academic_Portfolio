@@ -1,5 +1,6 @@
 export const beamlineData = [
   {
+    id: 1,
     facility: "ISIS Neutron and Muon Source (STFC)",
     acronym: "STFC",
     location: "United Kingdom",
@@ -54,6 +55,7 @@ export const beamlineData = [
     ],
   },
   {
+    id: 2,
     facility: "Paul Scherrer Institute (PSI)",
     acronym: "PSI",
     location: "Switzerland",
@@ -104,6 +106,7 @@ export const beamlineData = [
     ],
   },
   {
+    id: 3,
     facility: "Deutsches Elektronen-Synchrotron (DESY)",
     acronym: "DESY",
     location: "Germany",
@@ -135,6 +138,7 @@ export const beamlineData = [
     ],
   },
   {
+    id: 4,
     facility: "Japan Proton Accelerator Research Complex",
     acronym: "JPARC",
     location: "Japan",
@@ -161,6 +165,7 @@ export const beamlineData = [
     ],
   },
   {
+    id: 5,
     facility: "Raja Ramanna Centre for Advanced Technology",
     acronym: "RRCAT",
     location: "India",

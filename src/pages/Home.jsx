@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import HeroSection from "../components/homePageSections/HeroSection.jsx";
 import Research from "../components/homePageSections/Research.jsx";
-import Publications from "../components/homePageSections/Publications.jsx";
+import PublicationsSummary from "../components/homePageSections/PublicationsSummary.jsx";
 import BeamlineSummary from "../components/homePageSections/BeamlineSummary.jsx";
 import Talks from "../components/homePageSections/Talks.jsx";
 import Awards from "../components/homePageSections/Awards.jsx";
@@ -19,7 +19,7 @@ export default function Home() {
     >
       <HeroSection />
       <Research />
-      <Publications />
+      <PublicationsSummary />
       <BeamlineSummary />
       <Talks />
       <Awards />

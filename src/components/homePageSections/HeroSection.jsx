@@ -3,6 +3,9 @@ import fadeUpVariant from "../../animation/fadeUpVariant";
 import staggerContainer from "../../animation/staggerContainer";
 import { HeroPrimary } from "../ui/Button";
 import HeroImage from "../ui/HeroImage";
+// data
+import { pubData } from "../../constants/publicationsData";
+import { beamlineData } from "../../constants/beamlineData";
 
 const HeroSection = () => {
   return (
@@ -53,11 +56,13 @@ const HeroSection = () => {
               className="flex flex-wrap gap-8 mt-4 text-theme-text uppercase tracking-wider border-b border-theme-neutral-muted pb-6 w-full sm:w-max"
             >
               <div>
-                <h3 className="text-secondary font-mono">10+</h3>
+                <h3 className="text-secondary font-mono">{pubData.length}</h3>
                 <h4 className="text-theme-neutral-light">Publications</h4>
               </div>
               <div>
-                <h3 className="text-secondary font-mono">5</h3>
+                <h3 className="text-secondary font-mono">
+                  {beamlineData.length}
+                </h3>
                 <h4 className="text-theme-neutral-light">Global Facilities</h4>
               </div>
             </motion.div>
