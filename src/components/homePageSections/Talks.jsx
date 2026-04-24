@@ -41,7 +41,7 @@ const Talks = () => {
               className={`text-xs md:text-sm font-bold uppercase tracking-widest transition-all duration-300 relative pb-2 ${
                 activeTab === category
                   ? "text-secondary"
-                  : "text-theme-text hover:text-secondary hover:text-secondary-hover"
+                  : "text-theme-neutral-light hover:text-secondary-hover hover:text-secondary-hover"
               }`}
             >
               {category}

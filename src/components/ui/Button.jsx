@@ -41,7 +41,7 @@ const ButtonWrapper = ({
 export const HeroPrimary = (props) => (
   <ButtonWrapper
     {...props}
-    className={`bg-heading-gradient w-60 text-theme-dark px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-heading-gradient-hover hover:-translate-y-1 hover:shadow-theme-border transition-all duration-300 ease-in-out rounded-sm inline-block text-center ${props.className}`}
+    className={`bg-text-secondary w-60 text-theme-dark px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-text-secondary-hover hover:-translate-y-1 hover:shadow-theme-border transition-all duration-100 ease-in-out rounded-sm inline-block text-center ${props.className}`}
   >
     {props.children}
   </ButtonWrapper>
@@ -51,7 +51,7 @@ export const HeroPrimary = (props) => (
 export const SecondaryBorder = (props) => (
   <ButtonWrapper
     {...props}
-    className={`px-8 py-4 border border-theme-accent text-white text-fluid-p font-bold uppercase tracking-[0.2em] hover:bg-heading-gradient hover:text-black transition-all duration-300 flex items-center gap-4 w-fit ${props.className}`}
+    className={`px-8 py-4 border border-theme-accent text-white text-fluid-p font-bold uppercase tracking-[0.2em] hover:bg-theme-accent-light hover:text-black transition-all duration-300 flex items-center gap-4 w-fit ${props.className}`}
   >
     {props.children}
     <MdOutlineArrowRightAlt size={30} className="text-current" />
@@ -62,7 +62,7 @@ export const SecondaryBorder = (props) => (
 export const TextLink = (props) => (
   <ButtonWrapper
     {...props}
-    className={`inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-theme-text hover:text-yellow-400 transition-colors group/link ${props.className}`}
+    className={`inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-theme-neutral-light hover:text-yellow-400 transition-colors group/link ${props.className}`}
   >
     {props.children}
     <ExternalLink

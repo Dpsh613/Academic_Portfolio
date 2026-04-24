@@ -8,10 +8,10 @@ export const beamlineData = [
     bgImg:
       "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971296/ISIS_topview_lzt3sv.png",
     link: "https://www.isis.stfc.ac.uk/",
-    desc: "A world-leading center for research in the physical and life sciences. It produces beams of neutrons and muons that allow scientists to study materials at the atomic level.",
+    desc: "A world-leading pulsed neutron and muon spallation source operated by STFC. It provides high-intensity microscopic probes essential for determining local magnetic environments, mapping magnetic excitations, and investigating structural distortions and complex phase transitions at the atomic scale",
     instruments: [
       {
-        name: "MUSR",
+        name: "MuSR",
         instImg:
           "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971339/ISIS_MuSR_xqwvkr.png",
         link: "https://www.isis.stfc.ac.uk/instruments/musr/",
@@ -29,7 +29,7 @@ export const beamlineData = [
         instImg:
           "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971365/ISIS_EMU_ff98tb.png",
         link: "https://www.isis.stfc.ac.uk/instruments/emu/",
-        desc: "High-resolution, high-flux time-of-flight chopper spectrometer.",
+        desc: "A versatile $\mu$SR spectrometer optimized for zero-field and longitudinal-field measurements, ideal for exploring magnetism and spin fluctuation.",
         proposals: [
           {
             id: "2310347",
@@ -43,7 +43,7 @@ export const beamlineData = [
         instImg:
           "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971335/ISIS_MERLIN_lws7fk.png",
         link: "https://www.isis.stfc.ac.uk/instruments/merlin/",
-        desc: "High-resolution, high-flux time-of-flight chopper spectrometer.",
+        desc: "High-resolution, high-flux direct geometry time-of-flight chopper spectrometer.",
         proposals: [
           {
             id: "2610315",
@@ -63,14 +63,14 @@ export const beamlineData = [
     bgImg:
       "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971671/PSI_overview_k3javp.jpg",
     link: "https://www.psi.ch/en",
-    desc: "The largest research institute for natural and engineering sciences in Switzerland, operating world-class research infrastructures including the Swiss Muon Source (SμS).",
+    desc: "Switzerland's premier research center, home to the world's most intense continuous muon source (SμS). Its high-intensity continuous beams provide an ultra-sensitive local probe, essential for mapping complex magnetic ground states, quantum spin liquids, and superconducting properties at the microscopic scale.",
     instruments: [
       {
         name: "GPS",
         instImg:
           "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971723/PSI_GPS_gn1j6y.png",
         link: "https://www.psi.ch/en/smus/gps",
-        desc: "General Purpose Surface-Muon Instrument.",
+        desc: "A General Purpose Surface-Muon Spectrometer tailored for standard ZF, LF, and TF measurements without complex sample environments.",
         proposals: [
           {
             id: "20221271",
@@ -89,7 +89,7 @@ export const beamlineData = [
         instImg:
           "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971730/PSI_GPD_ysmrsl.png",
         link: "https://www.psi.ch/en/smus/gpd",
-        desc: "General Purpose Decay-Channel Muon Spectrometer.",
+        desc: "A General Purpose Decay-Channel Spectrometer optimized for experiments requiring special sample environments, such as high-pressure cells.",
         proposals: [
           {
             id: "20211455",
@@ -114,19 +114,19 @@ export const beamlineData = [
     bgImg:
       "https://res.cloudinary.com/dsbslj3nb/image/upload/q_auto/f_auto/v1774970053/DESY_overview_yw60la.jpg",
     link: "https://desy.de/",
-    desc: "The largest research institute for natural and engineering sciences in Switzerland, operating world-class research infrastructures including the Swiss Muon Source (SμS).",
+    desc: "One of the world's leading accelerator centers, operating the high-brilliance PETRA III synchrotron. Its ultra-bright X-ray beams are crucial for high-resolution structural determination and probing subtle temperature-dependent structural disorders in quantum materials.",
     instruments: [
       {
         name: "PETRA III - P24",
         instImg:
           "https://res.cloudinary.com/dsbslj3nb/image/upload/q_auto/f_auto/v1774971080/DESY_Petra-III_P24_2_bmsa0j.jpg",
         link: "https://photon-science.desy.de/facilities/petra_iii/beamlines/p24_chemical_crystallography/index_eng.html",
-        desc: "P24 Chemical Crystallography.",
+        desc: "P24 Chemical Crystallography beamline optimized for high-resolution single-crystal and powder X-ray diffraction, enabling precise structural analysis under varied sample environments.",
         proposals: [
           {
             id: "20220829",
             awarded: "3 days",
-            desc: "Understanding the role of structural disorder at ambient pressure to th observedQSLlikestateinAYbSe2 (A=RbandCs): A temperature dependen X-ray study",
+            desc: "Understanding the role of structural disorder at ambient pressure to th observed QSL like state in AYbSe2 (A=RbandCs): A temperature dependen X-ray study",
           },
           {
             id: "20220336",
@@ -146,14 +146,14 @@ export const beamlineData = [
     bgImg:
       "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971501/JPARC_overview_ji52bl.jpg",
     link: "https://j-parc.jp/c/en/index.html",
-    desc: "J-PARC is a high-intensity proton accelerator facility. The Materials and Life Science Experimental Facility (MLF) provides intense pulsed neutron and muon beams.",
+    desc: "Japan's state-of-the-art high-intensity proton accelerator complex. Its Materials and Life Science Experimental Facility (MLF) delivers intense pulsed muon beams, offering a powerful microscopic probe to investigate delicate spin dynamics and magnetic phase transitions in strongly correlated electron systems.",
     instruments: [
       {
         name: "Muon D1",
         instImg:
           "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971528/JPARC_Muon_D1_mtrhw6.jpg",
         link: "https://mlfinfo.jp/en/d1/",
-        desc: "General Purpose Surface-Muon Instrument.",
+        desc: "D1 Surface Muon Beamline, a versatile instrument highly effective for precise ZF and LF-$\mu$SR measurements of quantum magnets.",
         proposals: [
           {
             id: "2022B",
@@ -173,14 +173,14 @@ export const beamlineData = [
     bgImg:
       "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774972149/RRCAT_overview_xofyhz.jpg",
     link: "https://www.rrcat.gov.in/",
-    desc: "RRCAT operates the Indus-1 and Indus-2 synchrotron radiation sources, providing vital research capabilities in spectroscopy and X-ray diffraction.",
+    desc: "India's state-of-the-art synchrotron facility, operating the Indus-1 and Indus-2 storage rings. It provides an essential suite of X-ray diffraction and absorption spectroscopy beamlines for the comprehensive structural and electronic characterization of novel materials.",
     instruments: [
       {
-        name: "INDUS-II BL09",
+        name: "INDUS-II, BL09",
         instImg:
           "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774972200/RRCAT_BL09_alrqfq.png",
         link: "https://www.rrcat.gov.in/technology/accel/srul/beamlines/exafsscan.html",
-        desc: "Scanning EXAFS Beamline used for X-ray absorption fine structure studies.",
+        desc: "Scanning EXAFS beamline dedicated to high-precision X-ray absorption fine structure studies, ideal for resolving local atomic environments and oxidation states.",
         proposals: [
           {
             id: "6025",
@@ -190,11 +190,11 @@ export const beamlineData = [
         ],
       },
       {
-        name: "INDUS-I BL02",
+        name: "INDUS-I, BL02",
         instImg:
           "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774972201/RRCAT_Indus-I_spwt6f.jpg",
         link: "https://www.rrcat.gov.in/technology/accel/srul/indus1beamline/aipes.html",
-        desc: "Angle Integrated Photoelectron Spectroscopy beamline.",
+        desc: "Angle Integrated Photoelectron Spectroscopy (AIPES) beamline tailored for probing the valence band and averaged electronic structure of solid-state materials.",
         proposals: [
           {
             id: "5525",
@@ -204,11 +204,11 @@ export const beamlineData = [
         ],
       },
       {
-        name: "INDUS-II BL12",
+        name: "INDUS-II, BL12",
         instImg:
           "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774972196/RRCAT_BL12_xasoab.png",
         link: "https://www.rrcat.gov.in/technology/accel/srul/beamlines/adxrd.html",
-        desc: "Angle Dispersive X-ray Diffraction beamline.",
+        desc: "Angle Dispersive X-ray Diffraction (ADXRD) beamline optimized for identifying structural phase transitions and crystallographic distortions.",
         proposals: [
           {
             id: "5524",

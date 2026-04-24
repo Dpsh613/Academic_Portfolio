@@ -68,7 +68,7 @@ const Header = () => {
           className="font-heading font-bold text-fluid-p tracking-[0.15em] text-theme-heading relative z-[60]"
         >
           A. K.{" "}
-          <span className="bg-heading-gradient text-transparent bg-clip-text">
+          <span className="text-secondary">
             JANA
           </span>
           .
@@ -90,8 +90,8 @@ const Header = () => {
               className={`text-fluid-p font-mono uppercase tracking-widest transition-all duration-300 
     ${
       location.pathname === link.path
-        ? "bg-heading-gradient bg-clip-text text-transparent" // Active: Show gradient
-        : "text-theme-text hover:bg-heading-gradient-hover hover:bg-clip-text hover:text-transparent" // Inactive: Show solid color, gradient ONLY on hover
+        ? "text-secondary" // Active: Show gradient
+        : "text-theme-neutral-light hover:text-secondary-hover" // Inactive: Show solid color, gradient ONLY on hover
     }`}
             >
               {link.name}

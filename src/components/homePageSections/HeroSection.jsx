@@ -3,30 +3,40 @@ import fadeUpVariant from "../../animation/fadeUpVariant";
 import staggerContainer from "../../animation/staggerContainer";
 import { HeroPrimary } from "../ui/Button";
 import HeroImage from "../ui/HeroImage";
-// data
 import { pubData } from "../../constants/publicationsData";
-import { beamlineData } from "../../constants/beamlineData";
 
 const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen w-full flex items-center bg-[url('./assets/images/img1.jpg')] bg-cover bg-center"
+      className="relative min-h-screen w-full flex items-center bg-[url('./assets/images/img1.jpg')] bg-cover bg-center overflow-hidden"
     >
-      {/* Background Overlay */}
-      <div className="absolute inset-0 bg-theme-black/85 z-0 " />
+      {/* Background Overlay - Darkened slightly for better contrast */}
+      <div className="absolute inset-0 bg-theme-black/90 z-0" />
 
-      {/* Content Container */}
-      <div className="container mx-auto px-6 mt-10 md:px-12 lg:px-16 py-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      {/* Content Container - Exactly matched to Beamline Page Spacing */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-32 pb-20 relative z-10 w-full">
+        {/* Adjusted gap so left/right elements sit nicely together */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Text Content */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="lg:col-span-7 flex flex-col justify-center gap-4 md:gap-6"
+            className="lg:col-span-7 flex flex-col justify-center"
           >
+            <motion.div
+              variants={fadeUpVariant}
+              className="flex items-center gap-3 mb-4 md:mb-6"
+            >
+              <span className="w-8 h-px bg-theme-accent"></span>
+              <span className="text-secondary uppercase tracking-[0.2em] text-xs font-bold">
+                Doctoral Researcher
+              </span>
+            </motion.div>
+
+            {/* Now relying entirely on the globally scaled index.css variables */}
             <motion.h1 variants={fadeUpVariant} className="leading-tight">
               Arnab Kanti{" "}
               <span className="font-semibold text-secondary transition-all duration-300 hover:bg-text-secondary-hover">
@@ -36,43 +46,57 @@ const HeroSection = () => {
 
             <motion.p
               variants={fadeUpVariant}
-              className="font-bold text-fluid-p tracking-[0.2em] uppercase text-secondary"
+              className="mt-6 max-w-xl text-theme-neutral-light border-l-4 border-theme-accent pl-4 md:pl-6"
             >
-              Experimental Condensed Matter Physicist
+              My experimental approach is designed to bridge the gap between
+              macroscopic phenomena and their microscopic origins. To address
+              fundamental questions in magnetism, I integrate lab-based
+              synthesis and characterization, from XRD and magnetometry to
+              spectroscopy, with advanced probes such as neutron, muon, and
+              synchrotron facilities. To build a cohesive understanding from the
+              bulk material down to the atomic scale.
             </motion.p>
 
-            <motion.p
-              variants={fadeUpVariant}
-              className="max-w-xl text-theme-text border-l-4 border-theme-accent pl-4"
-            >
-              Specializing in magnetic frustration, quantum spin liquids, and
-              superconductivity. Leveraging world-class neutron, muon, and
-              synchrotron facilities across the globe.
-            </motion.p>
-
-            {/* Stats Row */}
             <motion.div
               variants={fadeUpVariant}
-              className="flex flex-wrap gap-8 mt-4 text-theme-text uppercase tracking-wider border-b border-theme-neutral-muted pb-6 w-full sm:w-max"
+              className="flex flex-wrap gap-6 md:gap-10 mt-8 text-theme-neutral-light uppercase tracking-wider border-b border-theme-neutral-muted pb-6 w-full"
             >
-              <div>
-                <h3 className="text-secondary font-mono">{pubData.length}</h3>
-                <h4 className="text-theme-neutral-light">Publications</h4>
+              <div className="flex-1 min-w-[100px]">
+                <h3 className="text-secondary font-mono">14</h3>
+                <h4 className="text-theme-neutral-light text-xs mt-1">
+                  Accepted Proposals
+                </h4>
               </div>
-              <div>
+              <div className="flex-1 min-w-[100px]">
+                <h3 className="text-secondary font-mono">35+</h3>
+                <h4 className="text-theme-neutral-light text-xs mt-1">
+                  Allocated Beam Days
+                </h4>
+              </div>
+              <div className="flex-1 min-w-[100px]">
                 <h3 className="text-secondary font-mono">
-                  {beamlineData.length}
+                  {pubData?.length || 0}
                 </h3>
-                <h4 className="text-theme-neutral-light">Global Facilities</h4>
+                <h4 className="text-theme-neutral-light text-xs mt-1">
+                  Publications
+                </h4>
               </div>
             </motion.div>
 
-            <motion.div variants={fadeUpVariant} className="pt-4">
+            <motion.div variants={fadeUpVariant} className="pt-6">
               <HeroPrimary to="/beamline">All Publications</HeroPrimary>
             </motion.div>
           </motion.div>
-          {/* Importing Image Frame */}
-          <HeroImage />
+
+          {/* Right Column: Hero Image component (Now naturally takes up the remaining 5 columns) */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-5 w-full flex justify-center"
+          >
+            <HeroImage />
+          </motion.div>
         </div>
       </div>
     </section>

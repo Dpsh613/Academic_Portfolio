@@ -57,7 +57,7 @@ const BeamlineSummary = () => {
                 <h3 className="text-secondary font-mono mb-2 group-hover:text-theme-accent transition-colors">
                   {metric.value}
                 </h3>
-                <p className="text-lg font-semibold text-theme-text tracking-wide mb-1">
+                <p className="text-lg font-semibold text-theme-neutral-light tracking-wide mb-1">
                   {metric.label}
                 </p>
                 <p className="text-xs font-medium uppercase tracking-widest text-theme-neutral-light group-hover:text-secondary transition-colors">

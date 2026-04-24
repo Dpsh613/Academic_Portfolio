@@ -64,7 +64,7 @@ const Awards = () => {
                   </p>
 
                   {/* Description using your muted text variable */}
-                  <p className="text-theme-text text-sm max-w-3xl m-0">
+                  <p className="text-theme-neutral-light text-sm max-w-3xl m-0">
                     {award.description}
                   </p>
                 </div>

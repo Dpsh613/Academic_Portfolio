@@ -34,7 +34,7 @@ const Gallery = () => {
         className="mb-16"
       >
         <h2 className="text-white mb-4">Beyond the Lab</h2>
-        <h3 className="bg-heading-gradient text-transparent bg-clip-text">
+        <h3 className="text-secondary">
           Moments of clarity outside the laboratory.
         </h3>
       </motion.div>

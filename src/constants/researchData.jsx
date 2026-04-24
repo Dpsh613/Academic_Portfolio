@@ -3,20 +3,23 @@ import { FiAperture, FiBox, FiActivity } from "react-icons/fi";
 export const researchData = [
   {
     id: "01",
-    title: "Core Physics",
-    desc: "Experimental investigation of strongly correlated electron systems, focusing on quantum magnetism, spin dynamics, and complex magnetic ground states in low-dimensional materials exhibiting geometric and bond-dependent magnetic frustration.",
+    title: "Strongly Correlated Materials",
+    desc: "Experimental condensed matter research focused on strongly correlated electron systems, low-dimensional oxides exhibiting magnetism, spin dynamics, geometric and magnetic frustration, and unconventional ground states.",
     icon: FiAperture,
+    img: "",
   },
   {
     id: "02",
-    title: "Structural Property",
-    desc: "Investigating the fundamental physics driven by the competition among electron correlation, spin-orbit coupling, and crystal field effects to elucidate the electronic states and origin of local magnetic moments in novel transition metal compounds.",
+    title: "Interplay of Competing Energy Scales",
+    desc: "Understanding how electron correlation, spin-orbit coupling, and crystal field energy govern electronic structure, local-moment formation, magnetic anisotropy, and emergent phases in transition-metal compounds",
     icon: FiBox,
+    img: "",
   },
   {
     id: "03",
-    title: "Methodological Approach",
-    desc: "Correlating macroscopic thermodynamic and transport measurements with microscopic magnetic and structural states. This relies on a comprehensive workflow-spanning solid-state material synthesis, spectroscopic determination of electronic structure (XAFS, XPS), and advanced large-scale facility probes.",
+    title: "Experimental Methodology",
+    desc: "Combining solid-state synthesis with magnetization, heat capacity, and transport measurements, alongside XPS/XAFS and large-scale facilities such as µSR, neutron scattering, and synchrotron X-ray diffraction, to correlate microscopic interactions with macroscopic properties",
     icon: FiActivity,
+    img: "",
   },
 ];

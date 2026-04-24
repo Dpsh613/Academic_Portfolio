@@ -12,9 +12,9 @@
   --color-theme-neutral-dark: #171717;
   --color-theme-neutral-muted: #525252;
   --color-theme-neutral-light: #a1a1a1;
-
+  /* 
   /* NEED TO DELETE THIS BUT I AM USING SO REFACTOR  */
-  --color-theme-text: #cbbbbeff;
+  /* --color-theme-text: #cbbbbeff;  */
 
   /* YELLOW - SECONDARY COLOR AND ITS DARK GRADIENT */
   --background-image-text-secondary: linear-gradient(
@@ -33,7 +33,7 @@
   --color-theme-accent-light: #fdc700;
 
   /* ALL COLOR PROPERTIES FROM HERE IT NEEDS TO BE REPLACED */
-  --background-image-heading-gradient: linear-gradient(
+  /* --background-image-heading-gradient: linear-gradient(
     to right,
     var(--color-yellow-400),
     var(--color-yellow-700)
@@ -43,7 +43,7 @@
     var(--color-yellow-600),
     var(--color-yellow-900)
   );
-  --color-theme-accent-hover: #fef08a;
+  --color-theme-accent-hover: #fef08a; */
 
   /* Fonts */
   --font-heading: "Playfair Display", serif;
@@ -53,23 +53,24 @@
 
   /* Fluid Typography */
   /* H1: Hero/Main Title */
-  --text-fluid-1: clamp(2.5rem, 5vw, 4.5rem);
+  --text-fluid-1: clamp(2rem, 4vw, 3.5rem);
 
   /* H2: Section Headers */
-  --text-fluid-2: clamp(1.55rem, 3.8vw, 2.25rem);
+  --text-fluid-2: clamp(1.5rem, 3vw, 2rem);
 
   /* H3: Sub-headers / Card Titles */
-  --text-fluid-3: clamp(1.25rem, 2.5vw, 1.75rem);
+  --text-fluid-3: clamp(1.15rem, 2vw, 1.5rem);
 
   /* Body Text: High readability */
-  --text-fluid-4: clamp(1.15rem, 1.5vw, 1.25rem);
+  --text-fluid-4: clamp(1rem, 1.5vw, 1.15rem);
+
   /* body font */
-  --text-fluid-p: clamp(1rem, 1.2vw, 1.125rem);
+  --text-fluid-p: clamp(0.95rem, 1.1vw, 1.05rem);
 }
 
 @layer base {
   body {
-    @apply bg-theme-black text-theme-text font-body selection:bg-theme-accent/30 selection:text-theme-accent;
+    @apply bg-theme-black  font-body selection:bg-theme-accent/30 selection:text-theme-accent;
     overflow-x: hidden;
   }
   h1 {
@@ -81,7 +82,7 @@
   }
 
   h3 {
-    @apply font-heading text-fluid-3 font-light;
+    @apply font-heading text-fluid-3 font-light text-theme-heading;
   }
 
   h4 {

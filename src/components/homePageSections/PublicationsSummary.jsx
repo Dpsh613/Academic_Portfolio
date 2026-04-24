@@ -6,48 +6,17 @@ import { SecondaryBorder } from "../ui/Button";
 import { MonoLink } from "../ui/Button";
 import { pubData } from "../../constants/publicationsData";
 
+// IMPORTANT: Import the smart formatter we created so your formulas look perfect!
+import AutoSciText from "../../utils/AutoSciText";
+
 const PublicationsSummary = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const expertiseData = [
-    {
-      category: "Synthesis",
-      skills: "Solid-state reaction, Arc-furnace, Optical Floating Zone.",
-    },
-    {
-      category: "Structural Analysis",
-      skills:
-        "Lab based XRD (Bruker D8 Advance), Synchrotron XRD (RRCAT, BL12, Indus-2), SEM-EDS.",
-    },
-    {
-      category: "Magnetometry & Transport",
-      skills:
-        "DC and AC magnetization (MPMS3); Heat capacity and electrical transport (PPMS - Quantum Design).",
-    },
-    {
-      category: "Spectroscopy",
-      skills:
-        "XPS, Raman scattering, UV-Vis-NIR, Photoluminescence, and Dielectric.",
-    },
-    {
-      category: "Microscopic Local Probes",
-      skills:
-        "Muon Spin Relaxation (µSR), Neutron Diffraction (ND), Inelastic Neutron Scattering (INS), X-ray Absorption Fine Structure.",
-    },
-    {
-      category: "Software",
-      skills:
-        "FullProf, JANA, WiMDA, Mantid, Demeter (Athena, Artemis, Hephaestus), Python, Fortran, Mathematica, VESTA, OriginLab, LaTeX.",
-    },
-  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
       nextSlide();
-    }, 5000); // Changes every 10 seconds
+    }, 7000); // Changes every 5 seconds
 
-    // This cleanup function clears the timer whenever the slide changes manually,
-    // preventing double-skipping bugs.
     return () => clearInterval(timer);
   }, [currentIndex]);
 
@@ -84,18 +53,25 @@ const PublicationsSummary = () => {
           >
             {/* Left Side: Content */}
             <div className="p-8 md:p-12 flex flex-col justify-center border-b md:border-b-0 md:border-r border-yellow-400">
-              <span className="block text-[12px] font-bold uppercase tracking-[0.3em] bg-heading-gradient text-transparent bg-clip-text mb-6">
+              <span className="block text-[12px] font-bold uppercase tracking-[0.3em] text-secondary mb-6">
                 {pubData[currentIndex].tag}
               </span>
+
               <h3 className="text-white mb-6 leading-tight">
-                {pubData[currentIndex].title}
+                {/* Wrapped title in AutoSciText to format formulas */}
+                <AutoSciText text={pubData[currentIndex].title} />
               </h3>
-              <p className="text-neutral-400 font-light leading-relaxed mb-10">
-                {pubData[currentIndex].desc}
-              </p>
+
+              {/* FIX: Because desc is an array, we map over it to create bullet points/paragraphs */}
+              <div className="text-neutral-400 font-light leading-relaxed mb-10 space-y-3">
+                {pubData[currentIndex].desc.map((paragraph, idx) => (
+                  <p key={idx} className="text-sm">
+                    • <AutoSciText text={paragraph} />
+                  </p>
+                ))}
+              </div>
 
               <div>
-                {/* DYNAMIC LINK APPLIED HERE */}
                 <MonoLink
                   href={pubData[currentIndex].link}
                   target="_blank"
@@ -107,12 +83,22 @@ const PublicationsSummary = () => {
             </div>
 
             {/* Right Side: Visual/Graph */}
-            <div className="bg-black relative min-h-[300px] flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:30px_30px]"></div>
-              <div className="z-10 text-center">
+            <div className="bg-black relative min-h-[300px] flex flex-col items-center justify-center overflow-hidden p-8">
+              {/* Decorative Background Pattern */}
+              <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:30px_30px] pointer-events-none"></div>
+
+              {/* FIX: Properly rendering the image tag with correct sizing */}
+              <img
+                src={pubData[currentIndex].img}
+                alt={pubData[currentIndex].imgLabel}
+                className="relative z-10 w-full max-w-[200px] h-auto object-contain mb-8 group-hover:scale-105 transition-transform duration-500"
+              />
+
+              <div className="z-10 text-center relative w-full">
                 <div className="w-20 h-0.5 bg-yellow-400/30 mx-auto mb-4"></div>
                 <span className="text-neutral-600 font-heading text-[10px] font-bold uppercase tracking-[0.2em]">
-                  {pubData[currentIndex].imgLabel}
+                  {/* Wrapped in AutoSciText so labels like "Na3Cu2SbO6" format correctly! */}
+                  <AutoSciText text={pubData[currentIndex].imgLabel} />
                 </span>
               </div>
             </div>
@@ -142,41 +128,6 @@ const PublicationsSummary = () => {
         className="mt-[-10] mb-20 flex justify-center"
       >
         <SecondaryBorder to="/beamline">View All Publications</SecondaryBorder>
-      </motion.div>
-
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={fadeUpVariant}
-        className="max-w-6xl mx-auto mb-16"
-      >
-        <div className="flex items-center gap-6 mb-12">
-          <h2 className="font-heading text-fluid-2 font-light tracking-tight text-white">
-            Hands-on Expertise
-          </h2>
-          <div className="flex-grow h-px bg-neutral-500"></div>
-        </div>
-
-        {/* The 3x2 Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {expertiseData.map((item, index) => (
-            <div
-              key={index}
-              className="p-8 border border-neutral-800 bg-neutral-900/10 hover:bg-neutral-900/30 hover:border-yellow-800 transition-all duration-300 rounded-sm group relative overflow-hidden"
-            >
-              {/* Subtle yellow highlight bar on hover */}
-              <div className="absolute top-0 left-0 w-0 h-1 bg-yellow-400 transition-all duration-300 group-hover:w-full"></div>
-
-              <h4 className="tracking-[0.1em]  bg-heading-gradient text-transparent bg-clip-text font-light mb-4">
-                {item.category}
-              </h4>
-              <p className="text-sm text-neutral-300 font-light leading-relaxed">
-                {item.skills}
-              </p>
-            </div>
-          ))}
-        </div>
       </motion.div>
     </section>
   );
