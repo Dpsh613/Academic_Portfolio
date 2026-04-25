@@ -10,6 +10,7 @@ const pageLinks = [
   { name: "Publications", path: "/publications" },
   { name: "Beamlines", path: "/beamline" },
   { name: "Collaborators", path: "/collaborators" },
+  { name: "About Me", path: "/about" },
 ];
 
 const Header = () => {
@@ -67,11 +68,7 @@ const Header = () => {
           to="/"
           className="font-heading font-bold text-fluid-p tracking-[0.15em] text-theme-heading relative z-[60]"
         >
-          A. K.{" "}
-          <span className="text-secondary">
-            JANA
-          </span>
-          .
+          A. K. <span className="text-secondary">JANA</span>.
         </Link>
         <nav className="hidden xl:flex gap-10 relative">
           <div

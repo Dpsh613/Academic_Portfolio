@@ -12,7 +12,7 @@ import BeamlinesPage from "./pages/BeamlinesPage";
 import ResearchPage from "./pages/ResearchPage";
 import PublicationsPage from "./pages/PublicationsPage";
 import CollaboratorsPage from "./pages/CollaboratorsPage.jsx";
-
+import AboutPage from "./pages/AboutPage.jsx";
 // 1. Create a new component just for your routes
 const AnimatedRoutes = () => {
   const location = useLocation(); // Gets the current URL
@@ -27,6 +27,7 @@ const AnimatedRoutes = () => {
         <Route path="/research" element={<ResearchPage />} />
         <Route path="/publications" element={<PublicationsPage />} />
         <Route path="/collaborators" element={<CollaboratorsPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </AnimatePresence>
   );
