@@ -13,7 +13,11 @@ const directoryLinks = [
 // 2. Array for external Connect links using your custom images
 // Note: Ensure the extensions (.png, .svg) match exactly what is in your public/footer folder!
 const connectLinks = [
-  { name: "ResearchGate", href: "#", img: "/footer/ResearchGate.png" },
+  {
+    name: "ResearchGate",
+    href: "https://www.researchgate.net/profile/Arnab-Jana-7?ev=hdr_xprf",
+    img: "/footer/ResearchGate.png",
+  },
   {
     name: "Google Scholar",
     href: "https://scholar.google.com/citations?hl=en&user=nxnCytcAAAAJ&sortby=pubdate&view_op=list_works",
