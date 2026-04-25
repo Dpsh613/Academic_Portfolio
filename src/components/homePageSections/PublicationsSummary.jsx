@@ -91,16 +91,8 @@ const PublicationsSummary = () => {
               <img
                 src={pubData[currentIndex].img}
                 alt={pubData[currentIndex].imgLabel}
-                className="relative z-10 w-full max-w-[200px] h-auto object-contain mb-8 group-hover:scale-105 transition-transform duration-500"
+                className="relative z-10 h-full w-full h-auto object-contain mb-8 group-hover:scale-105 transition-transform duration-500"
               />
-
-              <div className="z-10 text-center relative w-full">
-                <div className="w-20 h-0.5 bg-yellow-400/30 mx-auto mb-4"></div>
-                <span className="text-neutral-600 font-heading text-[10px] font-bold uppercase tracking-[0.2em]">
-                  {/* Wrapped in AutoSciText so labels like "Na3Cu2SbO6" format correctly! */}
-                  <AutoSciText text={pubData[currentIndex].imgLabel} />
-                </span>
-              </div>
             </div>
           </motion.div>
         </AnimatePresence>
