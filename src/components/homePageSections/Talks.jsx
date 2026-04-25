@@ -4,6 +4,7 @@ import fadeUpVariant from "../../animation/fadeUpVariant";
 import { presentationsData } from "../../constants/talksData";
 import { FaLocationDot } from "react-icons/fa6";
 import AnimatedTabPanel from "../ui/AnimatedTabPanel";
+import AutoSciText from "../../utils/AutoSciText";
 
 const Talks = () => {
   const categories = Object.keys(presentationsData);
@@ -73,7 +74,7 @@ const Talks = () => {
               {/* Right Side: Details */}
               <div className="flex flex-col">
                 <h3 className="mb-4 tracking-wider leading-snug">
-                  {item.title}
+                  <AutoSciText text={item.title} />
                 </h3>
                 <p className="text-secondary font-light m-0">{item.venue}</p>
                 {item.location && (

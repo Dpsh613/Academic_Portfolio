@@ -28,26 +28,38 @@ const Research = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="max-w-7xl mx-auto w-full border border-theme-accent-light p-8 md:p-12 backdrop-blur-sm shadow-xl"
+          className="max-w-7xl mx-auto w-full border border-theme-accent-light p-6 sm:p-8 md:p-12 backdrop-blur-sm shadow-xl"
         >
           <div className="flex flex-col divide-y divide-zinc-800/60">
             {researchData.map((item) => (
               <motion.div
                 key={item.id}
                 variants={fadeUpVariant}
-                className="flex flex-col md:flex-row gap-4 md:gap-12 py-10 first:pt-0 last:pb-0"
+                // Grid wrapper handles the responsive behavior
+                className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 py-10 first:pt-0 last:pb-0"
               >
-                {/* Left Side: Number & Heading */}
-                <div className="md:w-1/3 shrink-0">
+                {/* 1. Left Side: Number & Heading */}
+                <div className="md:col-span-12 lg:col-span-3 flex flex-col justify-start">
                   <span className="font-mono text-secondary font-fluid-2 font-light mb-2 block">
                     {item.id}.
                   </span>
-                  <h3 className="text-secondary">{item.title}</h3>
+                  <h3 className="text-secondary text-xl font-medium tracking-wide">
+                    {item.title}
+                  </h3>
                 </div>
 
-                {/* Right Side: Description */}
-                <div className="md:w-2/3 flex items-center">
-                  <p className="text-theme-neutral-light leading-relaxed m-0">
+                {/* 2. Middle: Image Component */}
+                <div className="md:col-span-5 lg:col-span-4 w-full aspect-video sm:aspect-[16/7] md:aspect-[4/3] lg:aspect-video overflow-hidden rounded-md border border-neutral-800 bg-black/40 group">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-full object-cover opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                  />
+                </div>
+
+                {/* 3. Right Side: Description */}
+                <div className="md:col-span-7 lg:col-span-5 flex items-center">
+                  <p className="text-theme-neutral-light leading-relaxed m-0 text-sm md:text-base">
                     {item.desc}
                   </p>
                 </div>
@@ -56,6 +68,8 @@ const Research = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Expertise Section */}
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -63,11 +77,11 @@ const Research = () => {
         variants={fadeUpVariant}
         className="max-w-6xl mx-auto"
       >
-        <div className="flex items-center gap-6 mt-12 mb-12">
+        <div className="flex items-center gap-6 mt-16 mb-12">
           <h2 className="font-heading text-fluid-2 font-light tracking-tight text-white">
             Hands-on Expertise
           </h2>
-          <div className="flex-grow h-px bg-neutral-500"></div>
+          <div className="flex-grow h-px bg-neutral-800"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

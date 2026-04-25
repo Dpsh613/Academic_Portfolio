@@ -63,30 +63,35 @@ const HeroSection = () => {
             {/* Adjusted stats grid so it doesn't break on narrow tablet columns */}
             <motion.div
               variants={fadeUpVariant}
-              className="grid grid-cols-2 sm:grid-cols-3 gap-6 md:gap-4 lg:gap-10 mt-8 text-theme-neutral-light uppercase tracking-wider border-b border-theme-neutral-muted pb-6 w-full"
+              className="flex flex-col sm:flex-row justify-around items-start sm:items-center gap-8 md:gap-4 lg:gap-6 mt-8 border-b border-theme-neutral-muted pb-8 w-full"
             >
-              <div>
-                <h3 className="text-secondary font-mono text-xl md:text-2xl">
+              {/* Stat 1: Publications */}
+              <div className="flex flex-col items-center w-fit">
+                <h3 className="text-secondary font-mono text-3xl md:text-4xl  mb-1">
+                  {pubData?.length || 0}
+                </h3>
+                <h4 className="text-theme-neutral-light text-xs uppercase tracking-wider text-center">
+                  Publications
+                </h4>
+              </div>
+
+              {/* Stat 2: Accepted Proposals */}
+              <div className="flex flex-col items-center w-fit">
+                <h3 className="text-secondary font-mono text-3xl md:text-4xl  mb-1">
                   14
                 </h3>
-                <h4 className="text-theme-neutral-light text-xs mt-1">
+                <h4 className="text-theme-neutral-light text-xs uppercase tracking-wider text-center">
                   Accepted Proposals
                 </h4>
               </div>
-              <div>
-                <h3 className="text-secondary font-mono text-xl md:text-2xl">
+
+              {/* Stat 3: Allocated Beam Days */}
+              <div className="flex flex-col items-center w-fit">
+                <h3 className="text-secondary font-mono text-3xl md:text-4xl  mb-1">
                   35+
                 </h3>
-                <h4 className="text-theme-neutral-light text-xs mt-1">
+                <h4 className="text-theme-neutral-light text-xs uppercase tracking-wider text-center">
                   Allocated Beam Days
-                </h4>
-              </div>
-              <div className="col-span-2 sm:col-span-1">
-                <h3 className="text-secondary font-mono text-xl md:text-2xl">
-                  {pubData?.length || 0}
-                </h3>
-                <h4 className="text-theme-neutral-light text-xs mt-1">
-                  Publications
                 </h4>
               </div>
             </motion.div>

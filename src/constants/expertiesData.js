@@ -1,7 +1,7 @@
 export const expertiseData = [
     {
         category: "Synthesis",
-        skills: "Solid-state reaction, Arc-furnace, Optical Floating Zone.",
+        skills: "Solid-state reaction, Arc-furnace.",
     },
     {
         category: "Structural Analysis",
