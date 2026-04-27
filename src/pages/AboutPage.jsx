@@ -238,7 +238,7 @@ const AboutPage = () => {
                 <div className="relative">
                   <div className="absolute w-3 h-3 bg-theme-accent rounded-full -left-[38px] top-1.5 shadow-[0_0_10px_rgba(250,250,51,0.5)]"></div>
                   <span className="font-mono text-theme-accent text-xs tracking-widest uppercase mb-1 block">
-                    2018 — Present
+                    2020 — Present
                   </span>
                   <h3 className="text-xl text-theme-heading mb-1">
                     Ph.D. in Physics
@@ -252,26 +252,26 @@ const AboutPage = () => {
                 <div className="relative">
                   <div className="absolute w-3 h-3 bg-theme-neutral-muted rounded-full -left-[38px] top-1.5"></div>
                   <span className="font-mono text-theme-accent text-xs tracking-widest uppercase mb-1 block">
-                    2016 — 2018
+                    2018 — 2020
                   </span>
                   <h3 className="text-xl text-theme-heading mb-1">
                     M.Sc. in Physics
                   </h3>
                   <p className="text-sm text-secondary">
-                    Update with your University Name
+                    Prabhat Kumar College, India.
                   </p>
                 </div>
                 {/* Timeline Item 3 (Dummy) */}
                 <div className="relative">
                   <div className="absolute w-3 h-3 bg-theme-neutral-muted rounded-full -left-[38px] top-1.5"></div>
                   <span className="font-mono text-theme-accent text-xs tracking-widest uppercase mb-1 block">
-                    2013 — 2016
+                    2015 — 2018
                   </span>
                   <h3 className="text-xl text-theme-heading mb-1">
                     B.Sc. in Physics
                   </h3>
                   <p className="text-sm text-secondary">
-                    Update with your University Name
+                    Prabhat Kumar College, India.
                   </p>
                 </div>
               </div>

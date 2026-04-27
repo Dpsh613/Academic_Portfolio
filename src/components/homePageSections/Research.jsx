@@ -35,33 +35,34 @@ const Research = () => {
               <motion.div
                 key={item.id}
                 variants={fadeUpVariant}
-                // Grid wrapper handles the responsive behavior
-                className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-10 py-10 first:pt-0 last:pb-0"
+                // Using 12 columns for precise layout control
+                className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-10 first:pt-0 last:pb-0 items-center"
               >
-                {/* 1. Left Side: Number & Heading */}
-                <div className="md:col-span-12 lg:col-span-3 flex flex-col justify-start">
+                {/* 1. Left Side: Number, Heading & Description */}
+                <div className="lg:col-span-7 flex flex-col justify-center">
                   <span className="font-mono text-secondary font-fluid-2 font-light mb-2 block">
                     {item.id}.
                   </span>
-                  <h3 className="text-secondary text-xl font-medium tracking-wide">
+                  <h3 className="text-secondary text-xl md:text-2xl font-medium tracking-wide mb-6">
                     {item.title}
                   </h3>
-                </div>
-
-                {/* 2. Middle: Image Component */}
-                <div className="md:col-span-5 lg:col-span-4 w-full aspect-video sm:aspect-[16/7] md:aspect-[4/3] lg:aspect-video overflow-hidden rounded-md border border-neutral-800 bg-black/40 group">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-full h-full object-cover opacity-75 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
-                  />
-                </div>
-
-                {/* 3. Right Side: Description */}
-                <div className="md:col-span-7 lg:col-span-5 flex items-center">
                   <p className="text-theme-neutral-light leading-relaxed m-0 text-sm md:text-base">
                     {item.desc}
                   </p>
+                </div>
+
+                {/* 2. Right Side: Image Component (Uncropped) */}
+                <div className="lg:col-span-5 w-full">
+                  {/* Added padding inside the border, overflow-hidden to contain the hover scale effect safely */}
+                  <div className="w-full p-2 group overflow-hidden flex justify-center items-center">
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      // object-contain ensures the image is NEVER cropped.
+                      // max-h-[350px] ensures it takes up substantial space without breaking the vertical flow
+                      className="w-full max-h-[350px] object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                    />
+                  </div>
                 </div>
               </motion.div>
             ))}
