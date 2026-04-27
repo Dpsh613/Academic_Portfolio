@@ -152,7 +152,7 @@ const PublicationsPage = () => {
                   </div>
 
                   {/* Right Column: Figure / Graph Area */}
-                  <div className="lg:col-span-5 relative">
+                  {/* <div className="lg:col-span-5 relative">
                     <div className="p-4 rounded-sm">
                       <div className="w-full rounded-sm p-4 flex items-center justify-center">
                         <img
@@ -165,7 +165,7 @@ const PublicationsPage = () => {
                         Fig: <AutoSciText text={pub.imgLabel} />
                       </p>
                     </div>
-                  </div>
+                  </div> */}
                 </motion.div>
               ))}
             </div>
