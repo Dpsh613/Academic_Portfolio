@@ -98,6 +98,7 @@ const AtomicJourney = () => {
                       className="relative flex items-center justify-center group"
                     >
                       {/* The Publication Dot */}
+                      <div className="w-2.5 h-2.5 bg-theme-accent rounded-full shadow-[0_0_8px_rgba(250,250,51,0.8)] cursor-pointer group-hover:scale-150 group-hover:bg-white transition-all duration-300" />
                     </motion.div>
                   </div>
                 );
