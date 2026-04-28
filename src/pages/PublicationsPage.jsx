@@ -3,7 +3,7 @@ import fadeUpVariant from "../animation/fadeUpVariant";
 import staggerContainer from "../animation/staggerContainer";
 import pageTransition from "../animation/pageTransition";
 import { pubData } from "../constants/publicationsData";
-import { SecondaryBorder } from "../components/ui/Button";
+import { HeroPrimary } from "../components/ui/Button";
 import { BookOpen, Users } from "lucide-react";
 import AutoSciText from "../utils/AutoSciText";
 import AtomicJourney from "../components/ui/AtomicJourney";
@@ -104,9 +104,9 @@ const PublicationsPage = () => {
                   {/* Left Column: Metadata & Text */}
                   <div className="lg:col-span-7 flex flex-col gap-8">
                     {/* Title */}
-                    <h2 className="text-theme-heading">
+                    <h3 className="text-theme-heading">
                       <AutoSciText text={pub.title} />
-                    </h2>
+                    </h3>
 
                     {/* Meta Tags (Journal, Vol, Page) */}
                     <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-sm">
@@ -123,7 +123,7 @@ const PublicationsPage = () => {
                     </div>
 
                     {/* Authors Box */}
-                    <div className="border-b border-theme-accent p-5 rounded-sm flex items-start gap-4">
+                    <div className="border-b border-theme-accent pb-5 rounded-sm flex items-start gap-4">
                       <Users className="w-5 h-5 text-theme-neutral-light shrink-0 mt-0.5" />
                       <p className="text-theme-neutral-light leading-relaxed">
                         {pub.authors.map((author, i) => {
@@ -145,9 +145,7 @@ const PublicationsPage = () => {
 
                     {/* Action Button using your SecondaryBorder component */}
                     <div className="pt-2">
-                      <SecondaryBorder href={pub.link}>
-                        Read Full Paper
-                      </SecondaryBorder>
+                      <HeroPrimary href={pub.link}>Read Full Paper</HeroPrimary>
                     </div>
                   </div>
 
@@ -157,12 +155,12 @@ const PublicationsPage = () => {
                       <div className="w-full rounded-sm p-4 flex items-center justify-center">
                         <img
                           src={pub.testImg}
-                          alt={`Graph for ${pub.imgLabel}`}
-                          className="w-full max-h-[350px] object-contain"
+                          alt={`Graph for ${pub.testImgLabel}`}
+                          className="w-full max-h-[200px] object-contain"
                         />
                       </div>
                       <p className="text-center text-theme-neutral-muted tracking-tight leading-tight text-xs mt-4 uppercase">
-                        Fig: <AutoSciText text={pub.imgLabel} />
+                        Fig: <AutoSciText text={pub.testImgLabel} />
                       </p>
                     </div>
                   </div>
