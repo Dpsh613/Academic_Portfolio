@@ -46,7 +46,7 @@ const Footer = () => {
         <div className="flex flex-col justify-start">
           <h3 className="text-3xl tracking-[0.15em] text-white mb-3 font-semibold">
             A.K.
-            <span className="text-secondary"> JANA</span>.
+            <span className="text-secondary"> JANA</span>
           </h3>
           <p className="text-secondary leading-relaxed max-w-sm font-light">
             Doctoral Researcher
@@ -111,13 +111,23 @@ const Footer = () => {
       <div className="pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-neutral-100 text-xs tracking-wider">
         <p>
           © {new Date().getFullYear()}
-          <span className="text-secondary font-medium"> A.K. Jana</span>. All
+          <span className="text-secondary font-medium"> A.K. Jana</span> All
           rights reserved.
         </p>
-        {/* <p className="text-left md:text-right">
-          Crafted for Scientific Excellence by{" "}
-          <span className="text-secondary font-medium">Deepika Sharma</span>.
-        </p> */}
+        <p className="text-left md:text-right font-light text-sm text-neutral-400">
+          Built by{" "}
+          <a
+            href="https://github.com/Dpsh613"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-secondary relative inline-block opacity-80 hover:opacity-100 transition-opacity duration-300
+               after:absolute after:left-0 after:-bottom-0.5 after:h-[1px] after:w-0
+               after:bg-current after:transition-all after:duration-300
+               hover:after:w-full"
+          >
+            Deepika Sharma
+          </a>
+        </p>
       </div>
     </footer>
   );

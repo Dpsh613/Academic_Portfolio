@@ -159,8 +159,8 @@ const PublicationsPage = () => {
                           className="w-full max-h-[200px] object-contain"
                         />
                       </div>
-                      <p className="text-center text-theme-neutral-muted tracking-tight leading-tight text-xs mt-4 uppercase">
-                        Fig: <AutoSciText text={pub.testImgLabel} />
+                      <p className="text-center text-theme-neutral-muted tracking-tight leading-tight text-xs mt-4">
+                        <AutoSciText text={pub.testImgLabel} />
                       </p>
                     </div>
                   </div>

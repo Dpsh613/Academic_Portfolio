@@ -44,11 +44,7 @@ export const HeroPrimary = (props) => (
     className={`
       /* 1. Base Styles & Gradient */
       bg-text-secondary w-60 text-theme-black px-8 py-4 text-sm font-bold uppercase tracking-widest rounded-sm inline-block text-center
-      
-      /* 2. Hover Effects (Using brightness instead of swapping gradients) */
       hover:brightness-110 hover:shadow-[0_10px_20px_rgba(250,250,51,0.2)] hover:-translate-y-1
-      
-      /* 3. The Smooth Transition (Changed to 300ms and ease-out) */
       transition-all duration-300 ease-out
       
       ${props.className}
