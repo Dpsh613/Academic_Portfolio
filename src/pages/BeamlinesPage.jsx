@@ -20,10 +20,10 @@ const BeamlinePage = () => {
       {/* --- HERO SECTION WITH RESTORED BACKGROUND IMAGE --- */}
       <div className="relative w-full pt-32 pb-20 lg:pb-32 overflow-hidden">
         {/* Background Image - UPDATE THE URL PATH HERE TO YOUR IMAGE */}
-        <div className="absolute inset-0 bg-[url('./assets/images/img1.jpg')] bg-cover bg-top z-0" />
+        <div className="absolute inset-0 bg-[url('./assets/images/img5.jpg')] bg-cover bg-top z-0" />
 
         {/* Overlay gradient so the text is readable and it fades nicely into the solid black bottom */}
-        <div className="absolute inset-0 bg-theme-black/80 z-0" />
+        <div className="absolute inset-0 bg-theme-black/65 z-0" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-theme-black z-0" />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">

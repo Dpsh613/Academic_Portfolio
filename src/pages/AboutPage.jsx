@@ -28,8 +28,8 @@ const AboutPage = () => {
       {/* --- 1. HERO SECTION --- */}
       <div className="relative w-full min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
         {/* Background Overlay using your img1 */}
-        <div className="absolute inset-0 bg-[url('./assets/images/img3.jpg')] bg-cover bg-center z-0" />
-        <div className="absolute inset-0 bg-theme-black/80 z-0" />
+        <div className="absolute inset-0 bg-[url('./assets/images/img7.jpg')] bg-cover bg-center z-0" />
+        <div className="absolute inset-0 bg-theme-black/30 z-0" />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -133,10 +133,10 @@ const AboutPage = () => {
             className="lg:col-span-8 space-y-16"
           >
             {/* The Bio Sections */}
-            <div className="space-y-8 text-secondary">
+            <div className="space-y-8">
               <motion.div variants={fadeUpVariant}>
                 <h2 className="text-theme-heading mb-4">The Motivation</h2>
-                <p>
+                <p className="text-secondary">
                   I am an experimental condensed matter physicist, currently
                   awaiting the defense of my Ph.D. at the Ramakrishna Mission
                   Vivekananda Educational and Research Institute (RKMVERI),
@@ -151,7 +151,7 @@ const AboutPage = () => {
                 <h2 className="text-theme-heading mb-4 mt-12">
                   The Methodology
                 </h2>
-                <p>
+                <p className="text-secondary">
                   Specifically, I investigate the fundamental questions
                   surrounding the origin of magnetism, spin dynamics, and the
                   nature of unconventional ground states in low-dimensional
@@ -294,10 +294,8 @@ const AboutPage = () => {
                 seeking opportunities to join a collaborative team where I can
                 contribute my expertise and grow as a researcher.
               </p>
-              <MonoLink href="mailto:akj.chs2014@gmail.com">
-                <span className="flex items-center gap-2">
-                  Get in Touch <ArrowRight className="w-4 h-4" />
-                </span>
+              <MonoLink href="https://mail.google.com/mail/?view=cm&to=akj.chs2014@gmail.com">
+                <span className="flex items-center gap-2">Get in Touch</span>
               </MonoLink>
             </motion.div>
           </motion.div>

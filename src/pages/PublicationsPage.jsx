@@ -30,17 +30,18 @@ const PublicationsPage = () => {
       {/* --- 1. HERO SECTION --- */}
       {/* Strict 100vh layout, no bottom border */}
       <div className="relative w-full min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('./assets/images/img3.jpg')] bg-cover bg-center" />
-        <div className="absolute inset-0 bg-theme-black/90 z-0" />
+        <div className="absolute inset-0 bg-[url('./assets/images/img2.jpg')] bg-cover bg-center" />
+        <div className="absolute inset-0 bg-theme-black/80 z-0" />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          {/* Adjusted for tablet: md:grid-cols-12 */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Content */}
             <motion.div
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="lg:col-span-7"
+              className="md:col-span-6 lg:col-span-7"
             >
               <motion.div
                 variants={fadeUpVariant}
@@ -58,14 +59,13 @@ const PublicationsPage = () => {
               </motion.h1>
             </motion.div>
 
-            {/* Right Content: Dynamic Atomic Timeline */}
+            {/* Right Content: Dynamic Atomic Timeline (Now visible on tablets) */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="lg:col-span-5 hidden lg:flex justify-center items-center"
+              className="hidden md:flex md:col-span-6 lg:col-span-5 justify-center items-center scale-90 lg:scale-100"
             >
-              {/* Injecting our smart component here */}
               <AtomicJourney />
             </motion.div>
           </div>
@@ -152,11 +152,11 @@ const PublicationsPage = () => {
                   </div>
 
                   {/* Right Column: Figure / Graph Area */}
-                  {/* <div className="lg:col-span-5 relative">
+                  <div className="lg:col-span-5 relative">
                     <div className="p-4 rounded-sm">
                       <div className="w-full rounded-sm p-4 flex items-center justify-center">
                         <img
-                          src={pub.img}
+                          src={pub.testImg}
                           alt={`Graph for ${pub.imgLabel}`}
                           className="w-full max-h-[350px] object-contain"
                         />
@@ -165,7 +165,7 @@ const PublicationsPage = () => {
                         Fig: <AutoSciText text={pub.imgLabel} />
                       </p>
                     </div>
-                  </div> */}
+                  </div>
                 </motion.div>
               ))}
             </div>

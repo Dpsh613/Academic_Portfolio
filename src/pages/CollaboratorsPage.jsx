@@ -5,8 +5,8 @@ import staggerContainer from "../animation/staggerContainer";
 import pageTransition from "../animation/pageTransition";
 import { COLLABORATORS } from "../constants/collaborators";
 import { Globe2, MapPin, User2 } from "lucide-react";
+import GlobalNetwork from "../components/ui/GlobalNetwork"; // Imported our new component
 
-// --- DATA FILTERING ---
 const nationalCollaborators = COLLABORATORS.filter(
   (c) => c.region === "national",
 );
@@ -25,18 +25,18 @@ const CollaboratorsPage = () => {
     >
       {/* --- 1. HERO SECTION --- */}
       <div className="relative w-full min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
-        {/* Background Image & Overlay */}
         <div className="absolute inset-0 bg-[url('./assets/images/img3.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-theme-black/90 z-0" />
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 w-full">
+          {/* Changed grid layout to support tablets (md:grid-cols-12) */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <motion.div
               initial="hidden"
               animate="visible"
               variants={staggerContainer}
-              className="lg:col-span-7"
+              className="md:col-span-6 lg:col-span-7"
             >
               <motion.div
                 variants={fadeUpVariant}
@@ -58,7 +58,7 @@ const CollaboratorsPage = () => {
 
               <motion.p
                 variants={fadeUpVariant}
-                className="mt-8 text-theme-neutral-light max-w-2xl border-l-2 border-theme-neutral-dark pl-4"
+                className="mt-6 md:mt-8 text-theme-neutral-light max-w-2xl border-l-2 border-theme-neutral-dark pl-4 text-sm sm:text-base"
               >
                 Advancing the frontiers of condensed matter physics through
                 shared expertise, large-scale facilities, and cross-border
@@ -66,67 +66,37 @@ const CollaboratorsPage = () => {
               </motion.p>
             </motion.div>
 
-            {/* Right Content: Animated Hero Graphic */}
+            {/* Right Content: Animated Hero Graphic (Now visible on md/tablets) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5, duration: 1.5, ease: "easeOut" }}
-              className="lg:col-span-5 hidden lg:flex justify-center items-center relative h-[400px]"
+              className="hidden md:flex md:col-span-6 lg:col-span-5 justify-center items-center"
             >
-              {/* Central Glowing Globe */}
-              <div className="absolute z-10 bg-theme-neutral-dark/80 p-6 rounded-full border border-theme-accent/30 shadow-[0_0_30px_rgba(250,250,51,0.15)] backdrop-blur-md">
-                <Globe2 className="w-16 h-16 text-theme-accent" />
-              </div>
-
-              {/* Orbital Ring 1 (Dashed, rotating clockwise) */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-10 border-[1px] border-theme-accent/20 rounded-full border-dashed"
-              />
-
-              {/* Orbital Ring 2 (Solid, rotating counter-clockwise) */}
-              <motion.div
-                animate={{ rotate: -360 }}
-                transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-20 border-[1px] border-theme-neutral-muted/30 rounded-full"
-              >
-                {/* Floating Nodes on Ring 2 */}
-                <div className="absolute top-[-5px] left-1/2 w-2.5 h-2.5 bg-theme-accent rounded-full shadow-[0_0_10px_rgba(250,250,51,0.8)]" />
-                <div className="absolute bottom-[-5px] left-1/4 w-2 h-2 bg-theme-neutral-light rounded-full" />
-              </motion.div>
-
-              {/* Orbital Ring 3 (Outer faint ring) */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 border-[1px] border-theme-neutral-dark rounded-full"
-              >
-                <div className="absolute top-1/4 right-[-4px] w-2 h-2 bg-theme-accent/50 rounded-full" />
-              </motion.div>
+              <GlobalNetwork />
             </motion.div>
           </div>
         </div>
       </div>
 
       {/* --- 2. COLLABORATORS LIST SECTIONS --- */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 relative z-10 pb-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-16 md:py-20 relative z-10 pb-32">
         {/* === NATIONAL COLLABORATIONS === */}
         {nationalCollaborators.length > 0 && (
-          <div className="mb-32">
+          <div className="mb-24 md:mb-32">
             <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUpVariant}
-              className="flex items-center gap-6 mb-12"
+              className="flex items-center gap-4 sm:gap-6 mb-8 md:mb-12"
             >
-              <h2 className="text-3xl md:text-4xl flex items-center gap-4 text-theme-heading">
-                <MapPin className="w-8 h-8 text-theme-accent" />
+              <h2 className="text-2xl sm:text-3xl md:text-4xl flex items-center gap-3 md:gap-4 text-theme-heading">
+                <MapPin className="w-6 h-6 sm:w-8 sm:h-8 text-theme-accent shrink-0" />
                 National{" "}
                 <span className="text-secondary font-bold">Collaborators</span>
               </h2>
-              <div className="h-px bg-theme-neutral-dark flex-grow"></div>
+              <div className="h-px bg-theme-neutral-dark flex-grow hidden sm:block"></div>
             </motion.div>
 
             <motion.div
@@ -151,14 +121,14 @@ const CollaboratorsPage = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUpVariant}
-              className="flex items-center gap-6 mb-12"
+              className="flex items-center gap-4 sm:gap-6 mb-8 md:mb-12"
             >
-              <h2 className="text-3xl md:text-4xl flex items-center gap-4 text-theme-heading">
-                <Globe2 className="w-8 h-8 text-theme-accent" />
+              <h2 className="text-2xl sm:text-3xl md:text-4xl flex items-center gap-3 md:gap-4 text-theme-heading">
+                <Globe2 className="w-6 h-6 sm:w-8 sm:h-8 text-theme-accent shrink-0" />
                 International{" "}
                 <span className="text-secondary font-bold">Collaborators</span>
               </h2>
-              <div className="h-px bg-theme-neutral-dark flex-grow"></div>
+              <div className="h-px bg-theme-neutral-dark flex-grow hidden sm:block"></div>
             </motion.div>
 
             <motion.div
@@ -181,36 +151,33 @@ const CollaboratorsPage = () => {
 
 export default CollaboratorsPage;
 
-// --- REUSABLE COLLABORATOR CARD COMPONENT ---
+// --- REUSABLE COLLABORATOR CARD COMPONENT (Mobile Fixed) ---
 const CollaboratorCard = ({ person }) => {
   return (
     <motion.div
       variants={fadeUpVariant}
-      className="bg-theme-neutral-dark/20 border border-theme-neutral-muted/30 p-6 rounded-sm hover:border-theme-accent/50 hover:bg-theme-neutral-dark/40 transition-all duration-500 group flex flex-col h-full relative overflow-hidden"
+      className="bg-theme-neutral-dark/20 border border-theme-neutral-muted/30 p-5 sm:p-6 rounded-sm hover:border-theme-accent/50 hover:bg-theme-neutral-dark/40 transition-all duration-500 group flex flex-col h-full relative overflow-hidden"
     >
-      {/* Subtle background glow on hover */}
-      <div className="absolute inset-0 bg-theme-accent opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500 pointer-events-none" />
-
       {/* Person Info */}
-      <div className="flex items-start gap-4 mb-8 flex-grow relative z-10">
-        <div className="bg-theme-black border border-theme-neutral-muted/50 p-2 rounded-full shrink-0 group-hover:border-theme-accent/50 transition-colors">
-          <User2 className="w-5 h-5 text-theme-neutral-light group-hover:text-theme-accent transition-colors" />
-        </div>
-        <h3 className="text-xl text-theme-heading font-heading leading-tight pt-1">
+      <div className="flex items-start gap-3 sm:gap-4 mb-6 sm:mb-8 flex-grow relative z-10">
+        {/* break-words ensures long names don't cause horizontal scrolling on mobile */}
+        <h3 className="text-lg sm:text-xl text-theme-heading font-heading leading-tight pt-1 break-words">
           {person.name}
         </h3>
       </div>
 
-      {/* Logos Area (Bottom) - No Text, Just Logos */}
-      <div className="border-t border-theme-neutral-dark pt-5 flex flex-wrap items-center gap-6 relative z-10">
+      {/* Logos Area (Bottom) - Using flex-wrap so multiple logos stack on small screens */}
+      <div className="border-t border-theme-accent/20 pt-4 sm:pt-5 flex flex-wrap items-center justify-start gap-4 sm:gap-6 relative z-10 min-h-[50px]">
         {person.institutes.map((inst, idx) => (
-          <div key={idx} className="h-10 flex items-center justify-center">
+          <div
+            key={idx}
+            className="h-8 sm:h-10 flex items-center justify-center shrink-0"
+          >
             <img
               src={inst.logo}
               alt="Institute Logo"
-              className="max-h-full max-w-[120px] object-contain"
+              className="max-h-full max-w-[100px] sm:max-w-[120px] object-contain"
               onError={(e) => {
-                // Fallback if image path is broken
                 e.target.src =
                   "https://via.placeholder.com/100x40/171717/525252?text=Logo";
               }}

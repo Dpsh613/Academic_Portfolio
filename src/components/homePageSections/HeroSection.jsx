@@ -12,7 +12,7 @@ const HeroSection = () => {
       className="relative min-h-screen w-full flex items-center bg-[url('./assets/images/img1.jpg')] bg-cover bg-center overflow-hidden"
     >
       {/* Background Overlay */}
-      <div className="absolute inset-0 bg-theme-black/90 z-0" />
+      <div className="absolute inset-0 bg-theme-black/80 z-0" />
 
       {/* Content Container */}
       <div className="max-w-7xl mx-auto px-6 md:px-8 lg:px-12 pt-32 pb-20 relative z-10 w-full">
@@ -97,7 +97,7 @@ const HeroSection = () => {
             </motion.div>
 
             <motion.div variants={fadeUpVariant} className="pt-6">
-              <HeroPrimary to="/beamline">All Publications</HeroPrimary>
+              <HeroPrimary to="/publications">All Publications</HeroPrimary>
             </motion.div>
           </motion.div>
 

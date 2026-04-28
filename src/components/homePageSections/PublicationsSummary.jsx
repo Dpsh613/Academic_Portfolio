@@ -83,7 +83,7 @@ const PublicationsSummary = () => {
               </div>
 
               {/* Right Side: Visual/Graph */}
-              <div className="bg-black relative flex items-center px-6 justify-center overflow-hidden w-full h-full">
+              <div className="bg-black relative flex items-center p-6 justify-center overflow-hidden w-full h-full">
                 {/* Decorative Background Pattern */}
                 <div className="absolute inset-0 pointer-events-none"></div>
 
