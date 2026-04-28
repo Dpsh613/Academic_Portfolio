@@ -3,27 +3,10 @@ import fadeUpVariant from "../../animation/fadeUpVariant";
 import staggerContainer from "../../animation/staggerContainer";
 import { RoundSweep } from "../ui/Button";
 import FacilityLogo from "../ui/FacilityLogo";
+import { beamlineMetrics } from "../../constants/beamlineMetrics";
 import { beamlineData } from "../../constants/beamlineData";
 
 const BeamlineSummary = () => {
-  const metrics = [
-    {
-      value: "5",
-      label: "Major Facilities",
-      sub: "Across Europe and Asia",
-    },
-    {
-      value: "14",
-      label: "Accepted Proposals",
-      sub: "Highly competitive access",
-    },
-    {
-      value: "34",
-      label: "Days Awarded",
-      sub: "Total allocated beamtime",
-    },
-  ];
-
   return (
     <section
       id="beamline"
@@ -48,7 +31,7 @@ const BeamlineSummary = () => {
           className="flex flex-col gap-12"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {metrics.map((metric, idx) => (
+            {beamlineMetrics.map((metric, idx) => (
               <motion.div
                 key={idx}
                 variants={fadeUpVariant}

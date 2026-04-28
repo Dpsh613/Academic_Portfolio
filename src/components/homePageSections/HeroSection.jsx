@@ -4,6 +4,7 @@ import staggerContainer from "../../animation/staggerContainer";
 import { HeroPrimary } from "../ui/Button";
 import HeroImage from "../ui/HeroImage";
 import { pubData } from "../../constants/publicationsData";
+import { beamlineMetrics } from "../../constants/beamlineMetrics";
 
 const HeroSection = () => {
   return (
@@ -49,7 +50,7 @@ const HeroSection = () => {
 
             <motion.p
               variants={fadeUpVariant}
-              className="mt-6 max-w-xl text-theme-neutral-light border-l-4 border-theme-accent pl-4 md:pl-6 text-sm md:text-base"
+              className="mt-6 max-w-xl text-theme-neutral-light border-l-4 border-theme-accent pl-4 md:pl-6 md:text-base"
             >
               My experimental approach is designed to bridge the gap between
               macroscopic phenomena and their microscopic origins. To address
@@ -78,20 +79,20 @@ const HeroSection = () => {
               {/* Stat 2: Accepted Proposals */}
               <div className="flex flex-col items-center w-fit">
                 <h3 className="text-secondary font-mono text-3xl md:text-4xl  mb-1">
-                  14
+                  {beamlineMetrics[1].value}
                 </h3>
                 <h4 className="text-theme-neutral-light text-xs uppercase tracking-wider text-center">
-                  Accepted Proposals
+                  {beamlineMetrics[1].label}
                 </h4>
               </div>
 
               {/* Stat 3: Allocated Beam Days */}
               <div className="flex flex-col items-center w-fit">
                 <h3 className="text-secondary font-mono text-3xl md:text-4xl  mb-1">
-                  35+
+                  {beamlineMetrics[2].value}
                 </h3>
                 <h4 className="text-theme-neutral-light text-xs uppercase tracking-wider text-center">
-                  Allocated Beam Days
+                  {beamlineMetrics[2].label}
                 </h4>
               </div>
             </motion.div>

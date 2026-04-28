@@ -49,14 +49,19 @@ const AboutPage = () => {
                 </span>
               </motion.div>
 
-              <motion.h1 variants={fadeUpVariant} className="leading-tight">
-                Arnab Kanti <br />
-                <span className="text-secondary font-bold">Jana</span>
+              <motion.h1
+                variants={fadeUpVariant}
+                className="leading-tight text-4xl md:text-5xl lg:text-6xl"
+              >
+                Arnab Kanti{" "}
+                <span className="font-semibold text-secondary transition-all duration-300 hover:bg-text-secondary-hover">
+                  Jana
+                </span>
               </motion.h1>
 
               <motion.p
                 variants={fadeUpVariant}
-                className="mt-8 text-theme-neutral-light max-w-2xl border-l-2 border-theme-neutral-dark pl-4"
+                className="mt-6 max-w-xl text-theme-neutral-light border-l-4 border-theme-accent pl-4 md:pl-6 md:text-base"
               >
                 Experimental condensed matter physicist bridging the gap between
                 macroscopic observations and their microscopic origins in

@@ -53,9 +53,14 @@ const PublicationsPage = () => {
                 </span>
               </motion.div>
 
-              <motion.h1 variants={fadeUpVariant} className="mb-4">
-                Peer-Reviewed <br />
-                <span className="text-secondary font-bold">Publications</span>
+              <motion.h1
+                variants={fadeUpVariant}
+                className="leading-tight text-4xl md:text-5xl lg:text-6xl"
+              >
+                Peer-Reviewed{" "}
+                <span className="ont-semibold text-secondary transition-all duration-300 hover:bg-text-secondary-hover">
+                  Publications
+                </span>
               </motion.h1>
             </motion.div>
 

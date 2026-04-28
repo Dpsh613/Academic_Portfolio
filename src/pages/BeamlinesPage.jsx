@@ -23,7 +23,7 @@ const BeamlinePage = () => {
         <div className="absolute inset-0 bg-[url('./assets/images/img5.jpg')] bg-cover bg-top z-0" />
 
         {/* Overlay gradient so the text is readable and it fades nicely into the solid black bottom */}
-        <div className="absolute inset-0 bg-theme-black/65 z-0" />
+        <div className="absolute inset-0 bg-theme-black/50 z-0" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-theme-black z-0" />
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
@@ -45,14 +45,19 @@ const BeamlinePage = () => {
                 </span>
               </motion.div>
 
-              <motion.h1 variants={fadeUpVariant}>
+              <motion.h1
+                variants={fadeUpVariant}
+                className="leading-tight text-4xl md:text-5xl lg:text-6xl"
+              >
                 Beamline <br />
-                <span className="font-bold text-secondary">Access</span>
+                <span className="font-semibold text-secondary transition-all duration-300 hover:bg-text-secondary-hover">
+                  Access
+                </span>
               </motion.h1>
 
               <motion.p
                 variants={fadeUpVariant}
-                className="mt-8 text-theme-neutral-light max-w-md"
+                className="mt-6 max-w-xl text-theme-neutral-light border-l-4 border-theme-accent pl-4 md:pl-6 md:text-base"
               >
                 A proven track record of securing beamtime at leading neutron,
                 muon, and synchrotron facilities worldwide. High precision

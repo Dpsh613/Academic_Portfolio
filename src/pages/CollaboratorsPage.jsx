@@ -50,15 +50,17 @@ const CollaboratorsPage = () => {
 
               <motion.h1
                 variants={fadeUpVariant}
-                className="mb-4 leading-tight"
+                className="leading-tight text-4xl md:text-5xl lg:text-6xl"
               >
                 Global & National <br />
-                <span className="text-secondary font-bold">Collaborators</span>
+                <span className="font-semibold text-secondary transition-all duration-300 hover:bg-text-secondary-hover">
+                  Collaborators
+                </span>
               </motion.h1>
 
               <motion.p
                 variants={fadeUpVariant}
-                className="mt-6 md:mt-8 text-theme-neutral-light max-w-2xl border-l-2 border-theme-neutral-dark pl-4 text-sm sm:text-base"
+                className="mt-6 max-w-xl text-theme-neutral-light border-l-4 border-theme-accent pl-4 md:pl-6 md:text-base"
               >
                 Advancing the frontiers of condensed matter physics through
                 shared expertise, large-scale facilities, and cross-border
