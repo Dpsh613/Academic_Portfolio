@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import fadeUpVariant from "../../animation/fadeUpVariant.js";
 import staggerContainer from "../../animation/staggerContainer.js";
 import { researchData } from "../../constants/researchData.jsx";
-import { expertiseData } from "../../constants/expertiesData.js";
+// import { expertiseData } from "../../constants/expertiesData.js";
 
 const Research = () => {
   return (
@@ -71,7 +71,7 @@ const Research = () => {
       </div>
 
       {/* Expertise Section */}
-      <motion.div
+      {/* <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
@@ -102,7 +102,7 @@ const Research = () => {
             </div>
           ))}
         </div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };

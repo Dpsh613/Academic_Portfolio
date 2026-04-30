@@ -9,7 +9,7 @@ import Footer from "./components/Layout/Footer.jsx";
 // pages
 import Home from "./pages/Home.jsx";
 import BeamlinesPage from "./pages/BeamlinesPage";
-import ResearchPage from "./pages/ResearchPage";
+import ExpertisePage from "./pages/ExpertisePage";
 import PublicationsPage from "./pages/PublicationsPage";
 import CollaboratorsPage from "./pages/CollaboratorsPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
@@ -24,7 +24,7 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/beamline" element={<BeamlinesPage />} />
-        <Route path="/research" element={<ResearchPage />} />
+        <Route path="/expertise" element={<ExpertisePage />} />
         <Route path="/publications" element={<PublicationsPage />} />
         <Route path="/collaborators" element={<CollaboratorsPage />} />
         <Route path="/about" element={<AboutPage />} />

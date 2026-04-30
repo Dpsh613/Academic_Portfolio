@@ -3,7 +3,7 @@ import { Microscope, BookOpen, Activity, Users, User } from "lucide-react";
 
 // 1. Array for internal Directory links mapped to your routes
 const directoryLinks = [
-  { name: "Research", path: "/research", icon: Microscope },
+  { name: "Research", path: "/expertise", icon: Microscope },
   { name: "Publications", path: "/publications", icon: BookOpen },
   { name: "Beamlines", path: "/beamline", icon: Activity },
   { name: "Collaborators", path: "/collaborators", icon: Users },

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import fadeUpVariant from "../animation/fadeUpVariant";
 import staggerContainer from "../animation/staggerContainer";
 import pageTransition from "../animation/pageTransition";
-import { COLLABORATORS } from "../constants/collaborators";
+import { COLLABORATORS } from "../constants/collaboratorsData";
 import { Globe2, MapPin, User2 } from "lucide-react";
 import GlobalNetwork from "../components/ui/GlobalNetwork"; // Imported our new component
 
