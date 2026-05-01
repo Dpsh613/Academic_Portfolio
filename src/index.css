@@ -70,7 +70,7 @@
 
 @layer base {
   body {
-    @apply bg-theme-black  font-body selection:bg-theme-accent/30 selection:text-theme-accent;
+    @apply bg-theme-black font-body selection:bg-theme-accent/30 selection:text-theme-accent;
     overflow-x: hidden;
   }
   h1 {
@@ -78,7 +78,7 @@
   }
 
   h2 {
-    @apply font-heading text-fluid-2 font-light tracking-tight;
+    @apply font-heading text-fluid-2 font-light tracking-tight text-theme-heading;
   }
 
   h3 {
