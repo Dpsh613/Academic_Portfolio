@@ -30,14 +30,14 @@ const SectionHeader = ({ title }) => (
   </motion.div>
 );
 
-// NEW Helper component: Renders items side-by-side as a card grid
+// Helper component: Renders items side-by-side as a card grid
 const FeatureGridItem = ({ item }) => (
   <motion.div
     variants={fadeUpVariant}
     className="flex flex-col group w-full h-full"
   >
-    {/* Text Section at the top */}
-    <div className="flex flex-col gap-3 md:gap-4 mb-6">
+    {/* Text Section (Fixed: lg:min-h Ensures perfect horizontal image alignment) */}
+    <div className="flex flex-col gap-3 md:gap-4 mb-4 lg:min-h-[140px]">
       <h3 className="text-secondary">
         <AutoSciText text={item.title} />
       </h3>
@@ -46,8 +46,8 @@ const FeatureGridItem = ({ item }) => (
       </p>
     </div>
 
-    {/* Image Section in the middle (mt-auto pushes it down so borders align if text length varies) */}
-    <div className="mt-auto mb-4 w-full rounded-sm p-4 md:p-6 flex items-center justify-center h-70 md:h-[330px] transition-all duration-300">
+    {/* Image Section (Fixed: removed mt-auto and changed invalid h-70 to h-64) */}
+    <div className="w-full rounded-sm p-4 md:p-6 flex items-center justify-center h-64 md:h-[330px] transition-all duration-300">
       <img
         src={item.image}
         alt={item.title}
@@ -55,10 +55,12 @@ const FeatureGridItem = ({ item }) => (
       />
     </div>
 
-    {/* Caption at the bottom */}
-    <p className="text-center text-theme-light tracking-tight leading-relaxed text-[11px] md:text-xs px-2 min-h-[3rem]">
-      <AutoSciText text={item.caption} />
-    </p>
+    {/* Caption at the bottom (Fixed: moved mt-auto here to correctly push caption bottom) */}
+    <div className="mt-auto pt-4">
+      <p className="text-center text-theme-light tracking-tight leading-relaxed text-[11px] md:text-xs px-2">
+        <AutoSciText text={item.caption} />
+      </p>
+    </div>
   </motion.div>
 );
 
@@ -72,7 +74,6 @@ const ExpertisePage = () => {
       className="bg-theme-black min-h-screen relative overflow-hidden"
     >
       {/* --- 1. HERO SECTION -- */}
-
       <div className="relative w-full min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
         {/* Background Overlay */}
         <div className="absolute inset-0 bg-[url('./assets/images/img9.jpg')] bg-cover bg-center" />
@@ -133,7 +134,6 @@ const ExpertisePage = () => {
       </div>
 
       {/* Main Content Wrapper */}
-
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-20 relative z-10 pb-24 md:pb-32 space-y-24 md:space-y-32">
         {/* SECTION: SYNTHESIS */}
         <div>
@@ -183,7 +183,7 @@ const ExpertisePage = () => {
           </motion.div>
         </div>
 
-        {/* SECTION: SPECTROSCOPY (Grid Layout) */}
+        {/* SECTION: SPECTROSCOPY */}
         <div>
           <SectionHeader title="Spectroscopy" />
           <motion.div
@@ -199,7 +199,7 @@ const ExpertisePage = () => {
                 variants={fadeUpVariant}
                 className="flex flex-col group w-full h-full"
               >
-                <div className="flex flex-col gap-3 md:gap-4">
+                <div className="flex flex-col gap-3 md:gap-4 mb-4 lg:min-h-[140px]">
                   <h3 className="text-secondary">
                     <AutoSciText text={item.title} />
                   </h3>
@@ -208,7 +208,7 @@ const ExpertisePage = () => {
                   </p>
                 </div>
 
-                <div className="mt-auto mb-4 h-70 md:h-[330px]  rounded-sm p-4 md:p-6 flex items-center justify-center">
+                <div className="w-full rounded-sm p-4 md:p-6 flex items-center justify-center h-64 md:h-[330px] transition-all duration-300">
                   <img
                     src={item.image}
                     alt={item.title}
@@ -216,9 +216,11 @@ const ExpertisePage = () => {
                   />
                 </div>
 
-                <p className="text-center text-theme-neutral-light tracking-tight leading-relaxed text-[11px] md:text-xs px-2 min-h-[3rem]">
-                  <AutoSciText text={item.caption} />
-                </p>
+                <div className="mt-auto pt-4">
+                  <p className="text-center text-theme-neutral-light tracking-tight leading-relaxed text-[11px] md:text-xs px-2">
+                    <AutoSciText text={item.caption} />
+                  </p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -255,26 +257,22 @@ const ExpertisePage = () => {
                     </p>
                   </div>
 
-                  {/* Base grid is always 2 columns */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 w-full">
                     {probe.media.map((mediaObj, idx) => {
-                      // Check if it's a graph to make it span full width
                       const isGraph = mediaObj.type === "graph";
 
                       return (
                         <div
                           key={idx}
-                          // If it's a graph, span exactly 2 columns (full width). Otherwise, standard 1 column.
-                          className={`flex flex-col group w-full ${
+                          className={`flex flex-col group w-full h-full ${
                             isGraph ? "md:col-span-2" : "col-span-1"
                           }`}
                         >
                           <div
-                            // Graphs get a slightly taller container since they span the full width
-                            className={`relative rounded-sm p-4 md:p-6 flex items-center justify-center ${
+                            className={`relative rounded-sm p-4 md:p-6 flex items-center justify-center w-full ${
                               isGraph
-                                ? "w-80vw h-64 md:h-[370px] lg:h-[450px]"
-                                : "w-full h-56 md:h-[250px] lg:h-[330px]"
+                                ? "h-64 md:h-[370px] lg:h-[450px]"
+                                : "h-64 md:h-[250px] lg:h-[330px]"
                             }`}
                           >
                             {mediaObj.type === "video" ? (
@@ -315,9 +313,11 @@ const ExpertisePage = () => {
                               </div>
                             )}
                           </div>
-                          <p className="text-center text-theme-neutral-muted tracking-tight leading-relaxed text-[11px] md:text-xs mt-3 md:mt-4 px-2">
-                            <AutoSciText text={mediaObj.caption} />
-                          </p>
+                          <div className="mt-auto pt-4">
+                            <p className="text-center text-theme-neutral-muted tracking-tight leading-relaxed text-[11px] md:text-xs px-2">
+                              <AutoSciText text={mediaObj.caption} />
+                            </p>
+                          </div>
                         </div>
                       );
                     })}
@@ -350,12 +350,10 @@ const ExpertisePage = () => {
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
             variants={staggerContainer}
-            /* 👇 FIX 1: Replaced rigid grid-cols with auto-fit so it dynamically adapts to ANY number of logos */
             className="grid grid-cols-[repeat(auto-fit,minmax(130px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-4 md:gap-6"
           >
             {SOFTWARES_DATA.map((software) => (
               <motion.div
-                /* 👇 FIX 2: Changed key from 'idx' to 'software.name' to force React to update when new data is added */
                 key={software.name}
                 variants={fadeUpVariant}
                 className="bg-theme-neutral-dark/20 border border-theme-neutral-muted/20 rounded-sm p-4 md:p-6 flex flex-col items-center justify-center text-center gap-3 md:gap-4 hover:border-theme-accent/50 hover:bg-[#0a0a0a] transition-all duration-300 group h-28 md:h-32 shadow-sm hover:shadow-[0_0_15px_rgba(250,250,51,0.1)]"
