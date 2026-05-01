@@ -57,7 +57,7 @@ const FeatureGridItem = ({ item }) => (
 
     {/* Caption at the bottom (Fixed: moved mt-auto here to correctly push caption bottom) */}
     <div className="mt-auto pt-4">
-      <p className="text-center text-theme-light tracking-tight leading-relaxed text-[11px] md:text-xs px-2">
+      <p className="text-center text-theme-neutral-light font-mono  text-xs tracking-tight px-2">
         <AutoSciText text={item.caption} />
       </p>
     </div>
@@ -217,7 +217,7 @@ const ExpertisePage = () => {
                 </div>
 
                 <div className="mt-auto pt-4">
-                  <p className="text-center text-theme-neutral-light tracking-tight leading-relaxed text-[11px] md:text-xs px-2">
+                  <p className="text-center font-mono text-theme-neutral-light tracking-tight leading-relaxed text-[11px] md:text-xs px-2">
                     <AutoSciText text={item.caption} />
                   </p>
                 </div>
@@ -314,7 +314,7 @@ const ExpertisePage = () => {
                             )}
                           </div>
                           <div className="mt-auto pt-4">
-                            <p className="text-center text-theme-neutral-muted tracking-tight leading-relaxed text-[11px] md:text-xs px-2">
+                            <p className="text-center text-theme-neutral-light font-mono  tracking-tight leading-relaxed text-[11px] md:text-xs px-2">
                               <AutoSciText text={mediaObj.caption} />
                             </p>
                           </div>
