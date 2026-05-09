@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
-import HeroSection from "../components/homePageSections/HeroSection.jsx";
-import Research from "../components/homePageSections/Research.jsx";
-import PublicationsSummary from "../components/homePageSections/PublicationsSummary.jsx";
-import BeamlineSummary from "../components/homePageSections/BeamlineSummary.jsx";
-import Talks from "../components/homePageSections/Talks.jsx";
-import Awards from "../components/homePageSections/Awards.jsx";
-import Gallery from "../components/homePageSections/Gallery.jsx";
-// animation
+import HomeHero from "../components/features/home/HomeHero.jsx";
+import ResearchExperties from "../components/features/home/ReseachExperties.jsx";
+import Publication from "../components/features/home/Publication.jsx";
+import Beamline from "../components/features/home/Beamline.jsx";
+import Talks from "../components/features/home/Talks.jsx";
+import Awards from "../components/features/home/Awards.jsx";
+import Gallery from "../components/features/home/Gallery.jsx";
 import pageTransition from "../animation/pageTransition.js";
 
 export default function Home() {
@@ -17,10 +16,10 @@ export default function Home() {
       animate="animate"
       exit="exit"
     >
-      <HeroSection />
-      <Research />
-      <PublicationsSummary />
-      <BeamlineSummary />
+      <HomeHero />
+      <ResearchExperties />
+      <Publication />
+      <Beamline />
       <Talks />
       <Awards />
       <Gallery />

@@ -96,7 +96,7 @@ export const RoundSweep = (props) => (
 export const MonoLink = (props) => (
   <ButtonWrapper
     {...props}
-    className={`shrink-0 text-xs font-mono uppercase tracking-widest text-theme-accent hover:text-yellow-200 transition-colors flex items-center gap-1 ${props.className}`}
+    className={`shrink-0 text-xs font-mono uppercase tracking-widest text-secondary hover:text-theme-accent transition-colors flex items-center gap-1 ${props.className}`}
   >
     {props.children} <ArrowUpRight className="w-3 h-3" />
   </ButtonWrapper>

@@ -1,3 +1,10 @@
+export const heroData = {
+  subtitle: "Experimental Records",
+  title: "Beamline",
+  highlight: "Access",
+  desc: "A proven track record of securing beamtime at leading neutron, muon, and synchrotron facilities worldwide. High precision experiments conducted across multiple instruments through highly competitive, peer-reviewed proposals.",
+};
+
 export const beamlineData = [
   {
     id: 1,
@@ -5,7 +12,7 @@ export const beamlineData = [
     acronym: "STFC",
     location: "United Kingdom",
     logo: "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971244/ISIS_logo_v7wwas.png",
-    bgImg:
+    facilityImg:
       "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971296/ISIS_topview_lzt3sv.png",
     link: "https://www.isis.stfc.ac.uk/",
     desc: "A world-leading pulsed neutron and muon spallation source operated by STFC. It provides high-intensity microscopic probes essential for determining local magnetic environments, mapping magnetic excitations, and investigating structural distortions and complex phase transitions at the atomic scale",
@@ -60,7 +67,7 @@ export const beamlineData = [
     acronym: "PSI",
     location: "Switzerland",
     logo: "https://res.cloudinary.com/dsbslj3nb/image/upload/q_auto/f_auto/v1775462609/images_onjjkb.png",
-    bgImg:
+    facilityImg:
       "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971671/PSI_overview_k3javp.jpg",
     link: "https://www.psi.ch/en",
     desc: "Switzerland's premier research center, home to the world's most intense continuous muon source (SμS). Its high-intensity continuous beams provide an ultra-sensitive local probe, essential for mapping complex magnetic ground states, quantum spin liquids, and superconducting properties at the microscopic scale.",
@@ -111,7 +118,7 @@ export const beamlineData = [
     acronym: "DESY",
     location: "Germany",
     logo: "https://res.cloudinary.com/dsbslj3nb/image/upload/q_auto/f_auto/v1774970012/DESY_logo_smiisc.png",
-    bgImg:
+    facilityImg:
       "https://res.cloudinary.com/dsbslj3nb/image/upload/q_auto/f_auto/v1774970053/DESY_overview_yw60la.jpg",
     link: "https://desy.de/",
     desc: "One of the world's leading accelerator centers, operating the high-brilliance PETRA III synchrotron. Its ultra-bright X-ray beams are crucial for high-resolution structural determination and probing subtle temperature-dependent structural disorders in quantum materials.",
@@ -143,7 +150,7 @@ export const beamlineData = [
     acronym: "JPARC",
     location: "Japan",
     logo: "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971448/JPARC_logo_nmbtqj.png",
-    bgImg:
+    facilityImg:
       "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971501/JPARC_overview_ji52bl.jpg",
     link: "https://j-parc.jp/c/en/index.html",
     desc: "Japan's state-of-the-art high-intensity proton accelerator complex. Its Materials and Life Science Experimental Facility (MLF) delivers intense pulsed muon beams, offering a powerful microscopic probe to investigate delicate spin dynamics and magnetic phase transitions in strongly correlated electron systems.",
@@ -170,7 +177,7 @@ export const beamlineData = [
     acronym: "RRCAT",
     location: "India",
     logo: "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774971957/RRCAT_logo_lipbmg.png",
-    bgImg:
+    facilityImg:
       "https://res.cloudinary.com/dsbslj3nb/image/upload/v1774972149/RRCAT_overview_xofyhz.jpg",
     link: "https://www.rrcat.gov.in/",
     desc: "India's state-of-the-art synchrotron facility, operating the Indus-1 and Indus-2 storage rings. It provides an essential suite of X-ray diffraction and absorption spectroscopy beamlines for the comprehensive structural and electronic characterization of novel materials.",

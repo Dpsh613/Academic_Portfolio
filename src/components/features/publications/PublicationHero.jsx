@@ -1,0 +1,18 @@
+import React from "react";
+import PageHero from "../../Layout/PageHero";
+import AtomicJourney from "../../ui/AtomicJourney";
+import { heroData } from "../../../constants/publicationsData";
+import bgImg from "../../../assets/images/img2.jpg";
+
+export default function PublicationHero() {
+  return (
+    <PageHero
+      data={heroData}
+      bgImage={bgImg}
+      rightContent={<AtomicJourney />}
+      // Fixed: Added md:col-span-6
+      leftCol="md:col-span-6 lg:col-span-5"
+      rightCol="md:col-span-6 lg:col-span-7"
+    />
+  );
+}

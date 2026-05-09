@@ -27,14 +27,14 @@ export default function BentoGrid() {
   ];
 
   return (
-    <div className="lg:col-span-7 grid grid-cols-3 grid-rows-3 gap-3 h-[500px]">
+    <div className="lg:col-span-7 grid grid-cols-3 grid-rows-3 gap-5 h-[500px]">
       {heroGridImages.map((item, idx) => (
         <motion.div
           key={idx}
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: idx * 0.1 }}
-          className={`${item.size} relative group overflow-hidden rounded-xl bg-theme-neutral-dark border border-theme-neutral-muted/30 shadow-2xl`}
+          className={`${item.size} relative group overflow-hidden rounded-xl shadow-2xl`}
         >
           <div className="absolute inset-0 bg-theme-black/40 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
           <img

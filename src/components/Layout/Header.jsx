@@ -6,7 +6,7 @@ import { useLocation, Link } from "react-router-dom";
 
 const pageLinks = [
   { name: "Home", path: "/" },
-  { name: "Research", path: "/expertise" },
+  { name: "Research", path: "/researchexpertise" },
   { name: "Publications", path: "/publications" },
   { name: "Beamlines", path: "/beamline" },
   { name: "Collaborators", path: "/collaborators" },
