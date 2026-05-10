@@ -11,7 +11,7 @@ export const personalInfo = {
   department: "Department of Physics, RKMVERI",
   address: "Belur Math, Howrah, West Bengal 711202, India",
   email: "akj.chs2014@gmail.com",
-  phone: "(+91) 9734490372",
+  phone: "916296572322",
   profileImage: "heroImage",
 };
 

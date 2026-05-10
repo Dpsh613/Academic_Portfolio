@@ -6,7 +6,7 @@ export const talksData = {
       title: "Novel Emergent Properties of Quantum Materials",
       institute:
         "FEL Colloquium, Raja Ramanna Centre for Advanced Technology (RRCAT)",
-      location: "India",
+      location: "Indore, India",
     },
   ],
   "Contributed Talks": [
@@ -16,7 +16,7 @@ export const talksData = {
       title:
         "Magnetic Excitations In a Novel 1D, Spin-1/2 Chain Magnet: CuSb2O4",
       institute: "66th DAE Solid State Physics Symposium, BIT-Mesra",
-      location: "India",
+      location: "Ranchi, India",
     },
   ],
   "Poster Presentations": [
@@ -36,7 +36,7 @@ export const talksData = {
         "Investigation of the superconducting gap structure in the layered caged compound Ba3Ir4Ge16 using muon spin relaxation and rotation",
       institute:
         "International Conference on Spectroscopies of Novel Superconductors (SNS), IISC Bangalore",
-      location: "India",
+      location: "Bangalore, India",
     },
     {
       id: 3,
@@ -44,7 +44,7 @@ export const talksData = {
       title: "Large Magnetocaloric Effect in Ho15Si9C",
       institute:
         "Conference on Emergent phenomena in Quantum MATerials (E-QMAT), IIT-Roorkee",
-      location: "India",
+      location: "Roorkee, India",
     },
   ],
   "Schools & Workshops": [

@@ -1,7 +1,7 @@
 import React from "react";
-import { Mail, Phone, MapPin, Building2 } from "lucide-react";
+import { Mail, Phone, MapPin, Building2, MessageCircle } from "lucide-react";
 import { FadeUp } from "../../Layout/AnimatedWrapper";
-import heroImage from "../../../assets/images/heroImage.jpg"; // Adjust path
+import heroImage from "../../../assets/images/heroImage.jpg";
 
 const ProfileSidebar = ({ info }) => {
   return (
@@ -9,7 +9,7 @@ const ProfileSidebar = ({ info }) => {
       {/* Portrait Image */}
       <div className="w-full aspect-[3/4] bg-neutral-900 rounded-sm overflow-hidden border border-theme-neutral-dark grayscale hover:grayscale-0 transition-all duration-700">
         <img
-          src={heroImage} // Or info.profileImage if dynamically passing
+          src={heroImage} 
           alt={info.name}
           className="w-full h-full object-cover"
         />
@@ -49,10 +49,17 @@ const ProfileSidebar = ({ info }) => {
             </div>
           )}
           {info.phone && (
-            <div className="flex items-center gap-3">
-              <Phone className="w-4 h-4 text-theme-accent shrink-0" />
-              <p>{info.phone}</p>
-            </div>
+            <a
+              href={`https://wa.me/${info.phone.replace(/\D/g, "")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 group"
+            >
+              <MessageCircle className="w-4 h-4 text-theme-accent shrink-0 group-hover:scale-110 transition-transform" />
+              <p className="text-theme-neutral-light group-hover:text-theme-accent transition-colors duration-300">
+                Chat on WhatsApp
+              </p>
+            </a>
           )}
         </div>
       </div>
