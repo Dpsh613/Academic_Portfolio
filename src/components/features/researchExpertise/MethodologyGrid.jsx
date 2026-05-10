@@ -42,7 +42,7 @@ const FeatureCard = ({ item }) => {
 
         {/* CAPTION SECTION */}
         <div className="shrink-0 pt-4 flex items-start justify-center min-h-[50px]">
-          <p className="text-center text-theme-neutral-light font-mono text-[11px] md:text-xs tracking-wide px-2 md:px-8 leading-relaxed opacity-80">
+          <p className="text-center text-theme-neutral-light font-mono text-[11px] md:text-xs md:text-justify break-words leading-relaxed tracking-wide px-2 md:px-8 leading-relaxed opacity-80">
             <AutoSciText text={item.imgLabel} />
           </p>
         </div>

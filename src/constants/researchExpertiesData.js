@@ -34,7 +34,7 @@ export const methodologiesData = {
       desc: "Experience in synthesizing polycrystalline materials through high temperature solid-state reaction routes, including weighing, mixing, grinding, pelletizing, and multi-step heat treatment to obtain single phase materials.",
       img: "https://res.cloudinary.com/dsbslj3nb/image/upload/v1777541887/SSS_process_rxvfmz.png",
       imgLabel:
-        "Schematic diagram of solid-state synthesis process. (a) Highly sensitive weighing machine to weigh the precursors. Precursors are mixed in stoichiometric amounts. (b) Agate mortar and pestle (not shown here) for grinding and crushing solid samples into fine powders. (c) Pellet press die. (d) Hydraulic pellet press machine (manual). The powder mixture is needed to be pelletized for increasing the contact surface area of the reactants. After palletization, the pellets are placed in a boat (e). To obtain thermodynamically stable compound and the pellets are needed to be annealed at high temperature. (f) Furnaces. The right-hand side shows box furnace and left-hand side shows the tube furnace of our lab. Depending upon samples, firing environment can be controlled.",
+        "Schematic diagram of solid-state synthesis process. (a) Weighing machine to weigh the precursors. (b) Agate mortar and pestle (not shown here) for grinding and crushing solid samples into fine powders. (c) Pellet press die. (d) Hydraulic pellet press machine (manual). After palletization, the pellets are placed in a boat (e). To obtain thermodynamically stable compound the pellets are needed to be annealed at high temperature. (f) Furnaces. The right-hand side shows box furnace and left-hand side shows the tube furnace of our lab.",
     },
     {
       id: 2,
