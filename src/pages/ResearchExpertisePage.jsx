@@ -6,10 +6,10 @@ import { methodologiesData } from "../constants/researchExpertiesData";
 import SectionWrapper from "../components/Layout/SectionWrapper";
 
 // Feature Components
-import ResearchHero from "../components/features/researchexpertise/ResearchHero";
-import MethodologyGrid from "../components/features/researchexpertise/MethodologyGrid";
-import MicroscopicProbes from "../components/features/researchexpertise/MicroscopicProbes";
-import SoftwareGrid from "../components/features/researchexpertise/SoftwareGrid";
+import ResearchHero from "../components/features/researchExpertise/ResearchHero";
+import MethodologyGrid from "../components/features/researchExpertise/MethodologyGrid";
+import MicroscopicProbes from "../components/features/researchExpertise/MicroscopicProbes";
+import SoftwareGrid from "../components/features/researchExpertise/SoftwareGrid";
 
 const ResearchExpertisePage = () => {
   return (
