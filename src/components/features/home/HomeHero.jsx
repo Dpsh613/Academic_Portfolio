@@ -40,15 +40,13 @@ const HomeHero = () => {
           <h3 className="text-secondary font-mono mb-1">
             {pubData?.length || 0}
           </h3>
-          <h4 className="text-secondary font-mono font-light text-center">
-            Publications
-          </h4>
+          <h4 className="text-white/80 font-light text-center">Publications</h4>
         </div>
 
         {/* Stat 2: Accepted Proposals (Takes 1 column on mobile) */}
         <div className="flex flex-col items-center text-center w-full sm:w-fit">
-          <h3 className="text-secondary font-mono mb-2">{totalProposals}</h3>
-          <h4 className="text-secondary font-mono font-light text-center">
+          <h3 className="text-secondary font-mono mb-1">{totalProposals}</h3>
+          <h4 className="text-white/80 font-light text-center">
             Accepted Proposals
           </h4>
         </div>
@@ -59,7 +57,7 @@ const HomeHero = () => {
         */}
         <div className="flex flex-col items-center text-center col-span-2 sm:col-span-1 w-full sm:w-fit">
           <h3 className="text-secondary font-mono mb-1">{totalDays}</h3>
-          <h4 className="text-secondary font-mono font-light text-center">
+          <h4 className="text-white/80 font-light text-center">
             Beamdays Awarded
           </h4>
         </div>
